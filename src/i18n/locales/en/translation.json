@@ -1,0 +1,183 @@
+{
+  "welcome": "Innovate. Transform. Succeed.",
+  "description": "We craft innovative digital solutions that transform businesses and drive success in today's competitive landscape.",
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "products": "Products",
+    "news": "News",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "select_language": "Select Language",
+
+  "contact": "Contact",
+  "aboutSection": {
+    "title": "About Igenia",
+    "shortDescription": "Igenia is an innovative technology company focused on developing digital solutions to help businesses in their digital transformation. With deep experience and cutting-edge technology, we're ready to be your business success partner.",
+    "readMore": "Read More"
+  },
+  "blogSection": {
+    "title": "Latest Blog",
+    "readMore": "Read More"
+  },
+  "clientSection": {
+    "title": "Our Clients"
+  },
+  "contactSection": {
+    "title": "Contact Us",
+    "description": "Have a project in mind or want to collaborate? Fill out the form below and we'll get back to you soon!",
+    "namePlaceholder": "Name",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Message",
+    "sendButton": "Send Message"
+  },
+  "techSection": {
+    "title": "Our Tech Stack",
+    "subtitle": "We leverage cutting-edge technologies to deliver powerful and scalable solutions",
+    "categories": {
+      "all": "All",
+      "platforms": "Platforms",
+      "languages": "Languages",
+      "frameworks": "Frameworks",
+      "databases": "Databases",
+      "ide": "IDEs & Tools"
+    }
+  },
+  "servicesSection": {
+    "title": "Our Services",
+    "subtitle": "We provide comprehensive IT solutions to help your business grow and transform digitally.",
+    "readyToTransform": "Ready to transform your business?",
+    "contactText": "Contact our team today for a personalized consultation and discover how we can help your business grow with our technology solutions.",
+    "consultButton": "Consult With Us",
+    "categories": {
+      "cloud": {
+        "title": "Cloud Service Solutions",
+        "services": {
+          "infrastructure": "Cloud Infrastructure",
+          "cicd": "CI/CD Deployment"
+        }
+      },
+      "development": {
+        "title": "Website & Mobile App Development",
+        "services": {
+          "webMobile": "Web/Mobile (iOS & Android)",
+          "uiux": "UI/UX & Web Design"
+        }
+      },
+      "procurement": {
+        "title": "IT Equipment Procurement",
+        "services": {
+          "hardware": "Hardware",
+          "software": "Software",
+          "installation": "Installation"
+        }
+      },
+      "hr": {
+        "title": "IT Human Resources & Training",
+        "services": {
+          "outsource": "Outsourcing",
+          "training": "IT Training"
+        }
+      },
+      "security": {
+        "title": "Security & Infrastructure",
+        "services": {
+          "integration": "System Integration",
+          "database": "Database",
+          "api": "API",
+          "infrastructure": "Infrastructure Installation",
+          "iso": "ISO 27002:2022 Audit",
+          "vulnerability": "Vulnerability Assessment",
+          "penetration": "Penetration Test Assessment"
+        }
+      }
+    }
+  },
+  "productsSection": {
+    "title": "Our Products",
+    "subtitle": "Explore our innovative products designed to transform your business",
+    "detailsButton": "Details"
+  },
+  "timeline": {
+    "title": "Our Journey",
+    "subtitle": "See how we've grown over time and reached important milestones.",
+    "instruction": "Scroll left and right to view timeline",
+    "2023": {
+      "title": "2023",
+      "description": "Established legal entity SK KEMENHUKAM AHU-0065830.AH.01.01. YEAR 2023"
+    },
+    "2024": {
+      "title": "2024",
+      "description": "Added New Product (Cloud Services) registered as official reseller of Alibaba Cloud Indonesia products."
+    },
+    "2025": {
+      "title": "2025",
+      "description": "Journey of creating Products and Innovation."
+    }
+  },
+  "faq": {
+    "frequently_asked_questions": "Frequently Asked Questions",
+    "faq_description": "Find answers to common questions about our services, products, and company. If you do not find what you are looking for, feel free to contact us.",
+    "search_faq_placeholder": "Search for questions...",
+    "all_categories": "All Categories",
+    "company": "Company",
+    "services": "Services",
+    "products": "Products",
+    "support": "Support",
+    "no_results_found": "No results found",
+    "try_different_keywords": "Try using different keywords or view all FAQs",
+    "view_all_faq": "View All FAQs",
+    "still_have_questions": "Still have questions?",
+    "contact_us_message": "Can't find the answer you're looking for? Please contact our friendly team.",
+    "contact_us": "Contact Us"
+  },
+  "footer": {
+    "contact_us": "Contact Us",
+    "email1": "info@igenia.com",
+    "email2": "support@igenia.com",
+    "phone": "+1 (555) 123-4567",
+    "menu": "Menu",
+    "privacy_policy": "Privacy Policy",
+    "follow_us": "Follow Us",
+    "all_rights_reserved": "All rights reserved"
+  },
+  "productDetail": {
+    "loading": "Loading product details...",
+    "backToProducts": "Back to Products",
+    "aboutProduct": "About This Product",
+    "keyFeatures": "Key Features",
+    "screenshotsMockups": "Screenshots & Mockups",
+    "desktopView": "Desktop View",
+    "mobileView": "Mobile View",
+    "techSpecs": "Technical Specifications",
+    "availableVersions": "Available Versions",
+    "interestedProduct": "Interested in this product?",
+    "contactSales": "Contact our sales team for more information or to request a demo.",
+    "requestInfo": "Request Information",
+    "details": "Details"
+  },
+  "aboutPage": {
+    "heroDescription": "Learn more about our journey, mission, values, and the team behind Igenia's innovative solutions.",
+    "companyTitle": "PT Inovasi Generasi Indonesia",
+    "companyDescription": "Igenia is an innovative technology company focused on developing digital solutions to help businesses in their digital transformation journey. Founded with a passion for technology and a vision to empower organizations through digital innovation, we combine technical expertise with creative thinking to deliver exceptional results.",
+    "companyDescription2": "With deep experience and cutting-edge technology, we're ready to be your business success partner in navigating the ever-evolving digital landscape. Our team of skilled professionals is dedicated to helping your organization thrive in the digital era.",
+    "visionMissionTitle": "Our Vision & Mission",
+    "visionTitle": "Our Vision",
+    "visionText": "To be a leading innovator in digital solutions, empowering businesses to thrive in the digital era through cutting-edge technology and exceptional service.",
+    "missionTitle": "Our Mission",
+    "missionText1": "To deliver innovative and sustainable digital solutions that solve real business challenges.",
+    "missionText2": "To foster long-term partnerships based on trust, transparency, and mutual growth.",
+    "missionText3": "To continuously evolve our expertise and services to meet the changing needs of the digital landscape.",
+    "valuesTitle": "Our Core Values",
+    "value1Title": "Simple Approach, Extraordinary Results",
+    "value1Text": "We believe in the power of simplicity. Our solutions are designed to be user-friendly and accessible, while delivering remarkable outcomes that exceed expectations. We transform complex problems into elegant solutions.",
+    "value2Title": "Commitment to Excellence",
+    "value2Text": "We uphold the highest standards in everything we do. Our team is dedicated to continuous improvement, staying ahead of industry trends, and delivering solutions that stand the test of time. We never settle for mediocrity.",
+    "value3Title": "Focus on Service",
+    "value3Text": "We prioritize your needs above all else. Our client-centric approach means we listen carefully, respond promptly, and go the extra mile to ensure your satisfaction. Your success is our success, and we're committed to providing exceptional service at every step.",
+    "ctaTitle": "Ready to Work With Us?",
+    "ctaText": "Let's collaborate to transform your business with our innovative digital solutions. Reach out to us today for a consultation."
+  }
+}

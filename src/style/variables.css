@@ -1,0 +1,32 @@
+:root {
+  /* Brand Colors */
+  --dark-purple: #2e073f;
+  --purple: #7a1cac;
+  --soft-purple: #ad49e1;
+  --light-purple: #ad49e1;
+
+  /* Other UI Colors */
+  --white: #ffffff;
+  --black: #000000;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(
+    to right,
+    var(--soft-purple),
+    var(--purple)
+  );
+  --gradient-dark: linear-gradient(
+    to bottom,
+    var(--dark-purple),
+    var(--purple)
+  );
+}

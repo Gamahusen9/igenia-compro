@@ -1,0 +1,40 @@
+//
+export const categories = [
+    { id: 'all', name: 'All' },
+    { id: 'platform', name: 'Platforms' },
+    { id: 'language', name: 'Languages' },
+    { id: 'framework', name: 'Frameworks' },
+    { id: 'database', name: 'Databases' },
+    { id: 'ide', name: 'IDEs & Tools' },
+];
+
+// Define all technologies with their details
+export const technologies = [
+    { id: 1, name: 'Android', iconSrc: '/assets/tech-stack/android-original.svg', category: 'platform', color: '#3DDC84' },
+    { id: 2, name: 'Android Studio', iconSrc: '/assets/tech-stack/androidstudio-original.svg', category: 'ide', color: '#3DDC84' },
+    { id: 3, name: 'Apple', iconSrc: '/assets/tech-stack/apple-original.svg', category: 'platform', color: '#000000' },
+    { id: 4, name: 'DBeaver', iconSrc: '/assets/tech-stack/dbeaver-original.svg', category: 'database', color: '#4d7b9a' },
+    { id: 5, name: 'Docker', iconSrc: '/assets/tech-stack/docker-original.svg', category: 'framework', color: '#2496ED' },
+    { id: 6, name: 'Flutter', iconSrc: '/assets/tech-stack/flutter-original.svg', category: 'framework', color: '#02569B' },
+    { id: 7, name: 'GitLab', iconSrc: '/assets/tech-stack/gitlab-original.svg', category: 'ide', color: '#FC6D26' },
+    { id: 8, name: 'Golang', iconSrc: '/assets/tech-stack/go-original.svg', category: 'language', color: '#00ADD8' },
+    { id: 9, name: 'IntelliJ', iconSrc: '/assets/tech-stack/intellij-original.svg', category: 'ide', color: '#000000' },
+    { id: 10, name: 'Java', iconSrc: '/assets/tech-stack/java-original.svg', category: 'language', color: '#007396' },
+    { id: 11, name: 'JavaScript', iconSrc: '/assets/tech-stack/javascript-original.svg', category: 'language', color: '#F7DF1E' },
+    { id: 12, name: 'Kotlin', iconSrc: '/assets/tech-stack/kotlin-original.svg', category: 'language', color: '#7F52FF' },
+    { id: 13, name: 'Kubernetes', iconSrc: '/assets/tech-stack/kubernetes-original.svg', category: 'framework', color: '#326CE5' },
+    { id: 14, name: 'Laravel', iconSrc: '/assets/tech-stack/laravel-original.svg', category: 'framework', color: '#FF2D20' },
+    { id: 15, name: 'Linux', iconSrc: '/assets/tech-stack/linux-original.svg', category: 'platform', color: '#FCC624' },
+    { id: 16, name: 'MS SQL Server', iconSrc: '/assets/tech-stack/microsoftsqlserver-original.svg', category: 'database', color: '#CC2927' },
+    { id: 17, name: 'PHP', iconSrc: '/assets/tech-stack/php-original.svg', category: 'language', color: '#777BB4' },
+    { id: 18, name: 'Python', iconSrc: '/assets/tech-stack/python-original.svg', category: 'language', color: '#3776AB' },
+    { id: 19, name: 'React', iconSrc: '/assets/tech-stack/react-original.svg', category: 'framework', color: '#61DAFB' },
+    { id: 20, name: 'Spring', iconSrc: '/assets/tech-stack/spring-original.svg', category: 'framework', color: '#6DB33F' },
+    { id: 21, name: 'Echo', iconSrc: '/assets/tech-stack/echo-original.svg', category: 'framework', color: '#3FA4B3FF' },
+    { id: 22, name: 'NPM', iconSrc: '/assets/tech-stack/npm-original.svg', category: 'ide', color: '#BA1A1AFF' },
+    { id: 23, name: 'Firebase', iconSrc: '/assets/tech-stack/firebase-original.svg', category: 'ide', color: '#EABF13FF' },
+    { id: 24, name: 'Postgree SQL', iconSrc: '/assets/tech-stack/postgresql-original.svg', category: 'database', color: '#137BEAFF' },
+    { id: 25, name: 'My SQL', iconSrc: '/assets/tech-stack/mysql-original.svg', category: 'database', color: '#13EA50FF' },
+    { id: 26, name: 'Canva', iconSrc: '/assets/tech-stack/canva-original.svg', category: 'ide', color: '#1365EAFF' },
+    { id: 27, name: 'Figma', iconSrc: '/assets/tech-stack/figma-original.svg', category: 'ide', color: '#1365EAFF' },
+];
