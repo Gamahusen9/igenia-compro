@@ -2,13 +2,13 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import PageHeader from '../../../components/common/PageHeader';
 
-export default function FaqHeader() {
+export default function BlogHeader() {
     const { t } = useTranslation();
 
     return (
         <PageHeader
-            title={t('faq.frequently_asked_questions')}
-            description={t('faq.faq_description')}
+            title={t('blog.title')}
+            description={t('blog.description')}
         />
     );
 }

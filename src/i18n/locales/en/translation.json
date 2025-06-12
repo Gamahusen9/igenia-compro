@@ -156,7 +156,11 @@
     "interestedProduct": "Interested in this product?",
     "contactSales": "Contact our sales team for more information or to request a demo.",
     "requestInfo": "Request Information",
-    "details": "Details"
+    "details": "Details",
+    "preview": "Preview",
+    "clickToPreview": "Click to Preview",
+    "noMockupsAvailable": "No mockups available for this product",
+    "contactForMore": "Contact us for more visual information about this product"
   },
   "aboutPage": {
     "heroDescription": "Learn more about our journey, mission, values, and the team behind Igenia's innovative solutions.",

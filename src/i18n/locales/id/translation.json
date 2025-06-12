@@ -6,7 +6,7 @@
     "about": "Tentang Kami",
     "services": "Layanan",
     "products": "Produk",
-    "news": "Berita",
+    "blog": "Berita",
     "faq": "FAQ",
     "contact": "Kontak"
   },
@@ -85,7 +85,24 @@
   },
   "blogSection": {
     "title": "Blog Terbaru",
-    "readMore": "Baca Selengkapnya"
+    "readMore": "Baca Selengkapnya",
+    "viewAll": "Lihat Semua"
+  },
+  "blog": {
+    "title": "Berita & Artikel Terbaru",
+    "description": "Dapatkan informasi terkini seputar teknologi, inovasi digital, dan perkembangan terbaru dari Igenia. Kami berbagi pengetahuan dan wawasan untuk membantu Anda memahami dunia teknologi yang terus berkembang.",
+    "categories": {
+      "all": "Semua Kategori",
+      "news": "Berita",
+      "info": "Informasi",
+      "technology": "Teknologi",
+      "company": "Perusahaan"
+    },
+    "readMore": "Baca Selengkapnya",
+    "backToBlogs": "Kembali ke Blog",
+    "relatedPosts": "Artikel Terkait",
+    "shareThis": "Bagikan Artikel",
+    "publishedOn": "Dipublikasikan pada"
   },
   "clientSection": {
     "title": "Klien Kami"
@@ -154,7 +171,11 @@
     "interestedProduct": "Tertarik dengan produk ini?",
     "contactSales": "Hubungi tim penjualan kami untuk informasi lebih lanjut atau meminta demo.",
     "requestInfo": "Minta Informasi",
-    "details": "Detail"
+    "details": "Detail",
+    "preview": "Pratinjau",
+    "clickToPreview": "Klik untuk Pratinjau",
+    "noMockupsAvailable": "Tidak ada mockup tersedia untuk produk ini",
+    "contactForMore": "Hubungi kami untuk informasi visual lebih lanjut tentang produk ini"
   },
   "aboutPage": {
     "heroDescription": "Pelajari lebih lanjut tentang perjalanan, misi, nilai, dan tim di balik solusi inovatif Igenia.",

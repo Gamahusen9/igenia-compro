@@ -1,8 +1,11 @@
+import { RouterPath } from "../../routes/RouterPath";
+
+// Define navbar items with their corresponding paths from RouterPath
 export const navLinks = [
-    { title: 'navigation.home', path: '/' },
-    { title: 'navigation.about', path: '/about' },
-    { title: 'navigation.news', path: '/news' },
-    { title: 'navigation.faq', path: '/faq' }
+    { title: 'navigation.home', path: RouterPath.home },
+    { title: 'navigation.about', path: RouterPath.about },
+    { title: 'navigation.blog', path: RouterPath.blog },
+    { title: 'navigation.faq', path: RouterPath.faq }
 ];
 
 export default navLinks;

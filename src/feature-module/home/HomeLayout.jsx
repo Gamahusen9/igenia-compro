@@ -243,9 +243,8 @@ export default function HomeLayout() {
                         }}
                     />
                 ))}
-                <About />
-                <Services />
                 <Product />
+                <Services />
                 <Blog />
                 <Client />
                 <Tech />

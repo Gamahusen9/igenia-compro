@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 /* eslint-disable no-unused-vars */
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,6 +11,12 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [showLanguages, setShowLanguages] = useState(false);
+    const location = useLocation();
+
+    // Check if the link is active
+    const isActive = (path) => {
+        return location.pathname === path;
+    };
 
     // Handle scroll effect for navbar
     useEffect(() => {
@@ -79,13 +85,25 @@ export default function Navbar() {
                                     initial={{ opacity: 0, y: -10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.3, delay: index * 0.1 }}
+                                    className="relative"
                                 >
                                     <Link
                                         to={link.path}
-                                        className={`text-base font-medium transition-colors hover:text-[#AD49E1] ${scrolled ? 'text-white' : 'text-white'
+                                        className={`text-base font-medium transition-colors hover:text-[#AD49E1] ${isActive(link.path)
+                                                ? 'text-[#AD49E1] font-semibold'
+                                                : scrolled ? 'text-white' : 'text-white'
                                             }`}
                                     >
                                         {t(link.title)}
+                                        {isActive(link.path) && (
+                                            <motion.div
+                                                className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#AD49E1] rounded-full"
+                                                layoutId="navbar-underline"
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 0.3 }}
+                                            />
+                                        )}
                                     </Link>
                                 </motion.div>
                             ))}
@@ -194,12 +212,25 @@ export default function Navbar() {
                                 <Link
                                     key={index}
                                     to={link.path}
-                                    className="text-white hover:text-[#AD49E1] py-2 transition-colors"
+                                    className={`transition-all py-2 ${isActive(link.path)
+                                            ? 'text-[#AD49E1] font-semibold bg-[#7A1CAC]/20 px-3 rounded-md'
+                                            : 'text-white hover:text-[#AD49E1] hover:pl-1'
+                                        }`}
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    {t(link.title)}
+                                    <div className="flex items-center">
+                                        {isActive(link.path) && (
+                                            <motion.div
+                                                initial={{ scale: 0 }}
+                                                animate={{ scale: 1 }}
+                                                className="w-1.5 h-1.5 bg-[#AD49E1] rounded-full mr-2"
+                                            />
+                                        )}
+                                        {t(link.title)}
+                                    </div>
                                 </Link>
-                            ))}                            {/* Mobile Language Selector */}
+                            ))}
+                            {/* Mobile Language Selector */}
                             <div className="flex flex-col space-y-2 pt-3 border-t border-[#7A1CAC]/30">
                                 <p className="text-white/70 text-xs uppercase tracking-wider mb-1">
                                     {t('select_language') || 'Select Language'}

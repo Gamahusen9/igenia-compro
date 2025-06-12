@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 // eslint-disable-next-line no-unused-vars
-import { motion } from 'framer-motion';
-import { FaArrowLeft, FaCheckCircle, FaLaptop, FaMobile, FaImage } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaCheckCircle, FaLaptop, FaMobile, FaImage, FaTimes, FaSearch } from 'react-icons/fa';
 import getProductList from '../../core/data/list-product';
 import { technologies } from '../../core/data/list-tech';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useTranslation } from 'react-i18next';
+import BackButton from '../../components/BackButton';
 
 // Function to get tech icon from local assets
 const getTechIcon = (techName) => {
@@ -38,9 +39,13 @@ const ProductDetail = ({ productId }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [mainImageError, setMainImageError] = useState(false);
     const [mockupErrors, setMockupErrors] = useState({});
+    const [previewImage, setPreviewImage] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
+        // Scroll to top when component mounts
+        window.scrollTo(0, 0);
+
         AOS.init({
             duration: 800,
             once: true,
@@ -81,21 +86,25 @@ const ProductDetail = ({ productId }) => {
         }));
     };
 
+    const openPreviewModal = (imageUrl, type) => {
+        setPreviewImage({
+            url: imageUrl,
+            type: type
+        });
+    };
+
+    const closePreviewModal = () => {
+        setPreviewImage(null);
+    };
+
+    // Check if there are valid mockups
+    const hasValidMockups = product.mockups && product.mockups.length > 0;
+
     return (
         <div className="py-16 md:py-24">
             <div className="container mx-auto px-4 md:px-8">
                 {/* Back button */}
-                <div className="mb-10">
-                    <motion.div
-                        whileHover={{ x: -5 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <Link to="/" className="inline-flex items-center text-white hover:text-[#AD49E1] transition-colors">
-                            <FaArrowLeft className="mr-2" />
-                            <span>{t('productDetail.backToProducts')}</span>
-                        </Link>
-                    </motion.div>
-                </div>
+                <BackButton />
 
                 {/* Product Hero */}
                 <div className="mb-16">
@@ -137,9 +146,11 @@ const ProductDetail = ({ productId }) => {
 
                 {/* Product Content */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-                    {/* Left Column: Description, Features */}
+                    {/* Left Column: Features and Mockups */}
                     <div className="lg:col-span-7" data-aos="fade-up">
                         <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-10 shadow-xl border border-white/10 mb-10">
+
+                            {/* About Product - Moved below mockups */}
                             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">{t('productDetail.aboutProduct')}</h2>
                             <p className="text-gray-300 mb-8 text-lg leading-relaxed">
                                 {product.description}
@@ -166,8 +177,8 @@ const ProductDetail = ({ productId }) => {
                                     </div>
                                 </div>
 
-                                {/* Mockups */}
-                                <div className="space-y-4">
+                                {/* Mockups - Moved above description */}
+                                <div className="space-y-6 mb-10">
                                     <h3 className="text-xl font-semibold text-[#AD49E1] flex items-center">
                                         <span className="bg-[#AD49E1]/20 p-1.5 rounded-md mr-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -176,62 +187,111 @@ const ProductDetail = ({ productId }) => {
                                         </span>
                                         {t('productDetail.screenshotsMockups')}
                                     </h3>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                                        {product.mockups.map((mockup, i) => (
-                                            <motion.div
-                                                key={i}
-                                                className="bg-[#7A1CAC]/20 p-3 rounded-lg"
-                                                whileHover={{ scale: 1.05, y: -5 }}
-                                                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                                            >
-                                                {mockup.type === 'desktop' ? (
-                                                    <div className="flex flex-col">
-                                                        <FaLaptop className="text-[#AD49E1] mx-auto mb-2" />
-                                                        <div className="bg-black/40 rounded-lg overflow-hidden h-36">
-                                                            {!mockupErrors[i] && mockup.img ? (
-                                                                <img
-                                                                    src={mockup.img}
-                                                                    alt={`Desktop view of ${product.title}`}
-                                                                    className="w-full h-full object-cover"
-                                                                    onError={() => handleMockupError(i)}
-                                                                />
-                                                            ) : (
-                                                                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#3D0E59] to-[#2E073F]">
-                                                                    <div className="text-center p-2">
-                                                                        <FaLaptop className="text-[#AD49E1] text-xl mx-auto mb-2" />
-                                                                        <p className="text-xs text-white">Desktop Preview</p>
+
+                                    {hasValidMockups ? (
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                            {product.mockups.map((mockup, i) => (
+                                                <motion.div
+                                                    key={i}
+                                                    className="bg-[#7A1CAC]/20 p-3 rounded-lg"
+                                                    whileHover={{ scale: 1.03, y: -5 }}
+                                                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                                >
+                                                    {mockup.type === 'desktop' ? (
+                                                        <div className="flex flex-col">
+                                                            <div className="flex items-center justify-between mb-2">
+                                                                <span className="flex items-center">
+                                                                    <FaLaptop className="text-[#AD49E1] mr-2" />
+                                                                    <p className="text-white text-sm">{t('productDetail.desktopView')}</p>
+                                                                </span>
+                                                                <span className="text-xs text-gray-400">1920 x 1080</span>
+                                                            </div>
+                                                            {/* Added max-width to desktop preview and centered it */}
+                                                            <div className="bg-black/40 rounded-lg overflow-hidden aspect-[16/9] mx-auto w-full max-w-[280px] relative group">
+                                                                {!mockupErrors[i] && mockup.img ? (
+                                                                    <>
+                                                                        <img
+                                                                            src={mockup.img}
+                                                                            alt={`Desktop view of ${product.title}`}
+                                                                            className="w-full h-full object-cover"
+                                                                            onError={() => handleMockupError(i)}
+                                                                        />
+                                                                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                                                                            <span className="text-white bg-[#AD49E1]/80 px-3 py-2 rounded-md text-sm">
+                                                                                {t('productDetail.clickToPreview')}
+                                                                            </span>
+                                                                        </div>
+                                                                    </>
+                                                                ) : (
+                                                                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#3D0E59] to-[#2E073F]">
+                                                                        <div className="text-center p-2">
+                                                                            <FaLaptop className="text-[#AD49E1] text-xl mx-auto mb-2" />
+                                                                            <p className="text-xs text-white">Desktop Preview - 1920 x 1080</p>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                            )}
+                                                                )}
+                                                            </div>
+                                                            <button
+                                                                className="mt-3 flex items-center justify-center w-full bg-[#AD49E1]/30 hover:bg-[#AD49E1]/50 py-2 rounded-lg text-white text-sm transition-colors"
+                                                                onClick={() => mockup.img && !mockupErrors[i] && openPreviewModal(mockup.img, mockup.type)}
+                                                            >
+                                                                <FaSearch className="mr-2" />
+                                                                {t('productDetail.preview')}
+                                                            </button>
                                                         </div>
-                                                        <p className="text-center text-xs text-gray-400 mt-2">{t('productDetail.desktopView')}</p>
-                                                    </div>
-                                                ) : (
-                                                    <div className="flex flex-col">
-                                                        <FaMobile className="text-[#AD49E1] mx-auto mb-2" />
-                                                        <div className="bg-black/40 rounded-md overflow-hidden h-48">
-                                                            {!mockupErrors[i] && mockup.img ? (
-                                                                <img
-                                                                    src={mockup.img}
-                                                                    alt={`Mobile view of ${product.title}`}
-                                                                    className="w-full h-full object-cover"
-                                                                    onError={() => handleMockupError(i)}
-                                                                />
-                                                            ) : (
-                                                                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#3D0E59] to-[#2E073F]">
-                                                                    <div className="text-center p-2">
-                                                                        <FaMobile className="text-[#AD49E1] text-xl mx-auto mb-2" />
-                                                                        <p className="text-xs text-white">Mobile Preview</p>
+                                                    ) : (
+                                                        <div className="flex flex-col">
+                                                            <div className="flex items-center justify-between mb-2">
+                                                                <span className="flex items-center">
+                                                                    <FaMobile className="text-[#AD49E1] mr-2" />
+                                                                    <p className="text-white text-sm">{t('productDetail.mobileView')}</p>
+                                                                </span>
+                                                                <span className="text-xs text-gray-400">1080 x 1920</span>
+                                                            </div>
+                                                            {/* Reduced max-width from 200px to 160px for mobile mockup */}
+                                                            <div className="bg-black/40 rounded-lg overflow-hidden aspect-[9/16] w-full mx-auto max-w-[160px] relative group">
+                                                                {!mockupErrors[i] && mockup.img ? (
+                                                                    <>
+                                                                        <img
+                                                                            src={mockup.img}
+                                                                            alt={`Mobile view of ${product.title}`}
+                                                                            className="w-full h-full object-cover"
+                                                                            onError={() => handleMockupError(i)}
+                                                                        />
+                                                                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                                                                            <span className="text-white bg-[#AD49E1]/80 px-3 py-2 rounded-md text-sm">
+                                                                                {t('productDetail.clickToPreview')}
+                                                                            </span>
+                                                                        </div>
+                                                                    </>
+                                                                ) : (
+                                                                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#3D0E59] to-[#2E073F]">
+                                                                        <div className="text-center p-2">
+                                                                            <FaMobile className="text-[#AD49E1] text-xl mx-auto mb-2" />
+                                                                            <p className="text-xs text-white">Mobile Preview - 1080 x 1920</p>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                            )}
+                                                                )}
+                                                            </div>
+                                                            <button
+                                                                className="mt-3 flex items-center justify-center w-full bg-[#AD49E1]/30 hover:bg-[#AD49E1]/50 py-2 rounded-lg text-white text-sm transition-colors"
+                                                                onClick={() => mockup.img && !mockupErrors[i] && openPreviewModal(mockup.img, mockup.type)}
+                                                            >
+                                                                <FaSearch className="mr-2" />
+                                                                {t('productDetail.preview')}
+                                                            </button>
                                                         </div>
-                                                        <p className="text-center text-xs text-gray-400 mt-2">{t('productDetail.mobileView')}</p>
-                                                    </div>
-                                                )}
-                                            </motion.div>
-                                        ))}
-                                    </div>
+                                                    )}
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <div className="bg-[#7A1CAC]/20 p-6 rounded-lg text-center">
+                                            <FaImage className="text-[#AD49E1] text-4xl mx-auto mb-3" />
+                                            <p className="text-white">{t('productDetail.noMockupsAvailable')}</p>
+                                            <p className="text-gray-400 text-sm mt-1">{t('productDetail.contactForMore')}</p>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -306,6 +366,54 @@ const ProductDetail = ({ productId }) => {
                         </div>
                     </div>
                 </div>
+
+                {/* Modal for image preview */}
+                <AnimatePresence>
+                    {previewImage && (
+                        <motion.div
+                            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 md:p-10"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={closePreviewModal}
+                        >
+                            <motion.div
+                                className="relative max-w-7xl w-full max-h-[90vh] flex items-center justify-center"
+                                initial={{ scale: 0.8, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                exit={{ scale: 0.8, opacity: 0 }}
+                                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <button
+                                    className="absolute top-5 right-5 z-10 bg-white/20 rounded-full p-2 hover:bg-white/40 transition-colors"
+                                    onClick={closePreviewModal}
+                                >
+                                    <FaTimes className="text-white text-xl" />
+                                </button>
+
+                                {/* Added more padding and limited desktop preview width */}
+                                <div className={`bg-[#2E073F]/50 p-6 rounded-xl backdrop-blur-sm ${previewImage.type === 'mobile' ? 'h-auto' : 'w-auto'}`}>
+                                    <div className={`flex items-center justify-center ${previewImage.type === 'mobile' ? 'h-auto' : 'w-auto'}`}>
+                                        <img
+                                            src={previewImage.url}
+                                            alt="Preview"
+                                            className={`
+                                                ${previewImage.type === 'desktop' ? 'max-w-[800px] w-full object-contain' : ''}
+                                                ${previewImage.type === 'mobile' ? 'h-[70vh] max-w-[300px] object-contain' : ''}
+                                            `}
+                                        />
+                                    </div>
+                                    <div className="mt-6 text-center">
+                                        <p className="text-white text-sm">
+                                            {previewImage.type === 'desktop' ? '1920 x 1080 - Desktop View' : '1080 x 1920 - Mobile View'}
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     );

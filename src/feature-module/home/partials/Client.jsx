@@ -28,12 +28,17 @@ const Client = () => {
 
     // Sample client data - replace with actual client logos
     const clients = [
-        { id: 1, name: "Company A", logo: "/assets/logo.png" },
-        { id: 2, name: "Company B", logo: "/assets/logo.png" },
-        { id: 3, name: "Company C", logo: "/assets/logo.png" },
-        { id: 4, name: "Company D", logo: "/assets/logo.png" },
-        { id: 5, name: "Company E", logo: "/assets/logo.png" },
-        { id: 6, name: "Company F", logo: "/assets/logo.png" }
+        { id: 1, name: "Alibaba", logo: "/assets/client/alibaba.png" },
+        { id: 2, name: "Bina Rumah Online", logo: "/assets/client/bro.png" },
+        { id: 3, name: "BSI", logo: "/assets/client/bsi.png" },
+        { id: 4, name: "E2Pay", logo: "/assets/client/e2pay.png" },
+        { id: 5, name: "Evoteks", logo: "/assets/client/evoteks.png" },
+        { id: 6, name: "Indonet", logo: "/assets/client/indonet.png" },
+        { id: 7, name: "Rajabiller", logo: "/assets/client/rajabiller.png" },
+        { id: 8, name: "Speed Cash", logo: "/assets/client/speedcash.png" },
+        { id: 9, name: "Voltras", logo: "/assets/client/voltras.png" },
+        { id: 10, name: "Winpay", logo: "/assets/client/winpay.png" },
+        { id: 11, name: "Xendit", logo: "/assets/client/xendit.png" },
     ];
 
     const containerVariants = {
