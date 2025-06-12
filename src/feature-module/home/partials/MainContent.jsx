@@ -86,12 +86,13 @@ export default function MainContent() {
                         data-aos="fade-up"
                         data-aos-duration="800"
                         className="max-w-3xl mx-auto"
-                    >            <h1
-                        className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-[#AD49E1] via-[#7A1CAC] to-white bg-clip-text text-transparent mb-8"
-                        data-aos="fade-down"
-                        data-aos-delay="100"
-                        data-aos-duration="1000"
                     >
+                        <h1
+                            className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-[#AD49E1] via-[#7A1CAC] to-white bg-clip-text text-transparent mb-8"
+                            data-aos="fade-down"
+                            data-aos-delay="100"
+                            data-aos-duration="1000"
+                        >
                             {t('welcome')}
                         </h1>
 
@@ -121,16 +122,6 @@ export default function MainContent() {
                             >
                                 {t('services')}
                             </button>
-                        </div>          </div>
-
-                    {/* Animated scroll indicator */}
-                    <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-                        <div
-                            className="w-10 h-16 border-2 border-white rounded-full flex justify-center p-1"
-                            data-aos="fade-up"
-                            data-aos-delay="700"
-                        >
-                            <div className="w-2 h-4 bg-white rounded-full animate-bounce mt-1"></div>
                         </div>
                     </div>
                 </div>

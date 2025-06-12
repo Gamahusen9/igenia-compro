@@ -320,13 +320,6 @@ const Product = () => {
                                 </div>
                             );
                         })()}
-
-                        {/* Device type indicator badge - now positioned relative to the product image */}
-                        <div className="absolute top-3 right-3 bg-[#2E073F]/80 backdrop-blur-sm text-xs text-white px-2 py-1 rounded shadow z-30">
-                            {products[currentIndex].type === 'mobile' ?
-                                t('productsSection.mobileApp') :
-                                t('productsSection.webApp')}
-                        </div>
                     </div>
 
                     {/* Right Column - Product Information - compact text */}

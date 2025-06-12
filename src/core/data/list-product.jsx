@@ -53,7 +53,7 @@ export default function getProductList() {
             id: 3,
             title: 'EKO (ERP Kontraktor)',
             img: '/assets/products/project-bro.png',
-            faceImg: '/assets/products/platforms/web-platform.png',
+            faceImg: '/assets/products/mockup-laptop-bro.png',
             description: 'Aplikasi ERP Sipil untuk kontraktor sekala kecil dan menengah ini hadir untuk memenuhi kebutuhan pelaku bisnis kontraktor, dimana aplikasi ini dibuat End to End mulai dari proses pendafaran calon nasabah, proses penwaran, pelaksanaan, hingga penutupan, Aplikasi ini dilengkapi dengan database AHSP yang sudah sesuai dengan standar perhitungan nasional.',
             features: [
                 'Modul Customer',
