@@ -56,13 +56,13 @@ export default function Navbar() {
     return (
         <nav
             className={`fixed w-full z-50 transition-all duration-300 ${scrolled
-                ? 'bg-[#2E073F]/95 shadow-lg backdrop-blur-sm py-2'
-                : 'bg-transparent py-4'
+                ? 'bg-[#2E073F]/95 shadow-lg backdrop-blur-sm py-0'
+                : 'bg-transparent py-0'
                 }`}
             data-aos="fade-down"
             data-aos-duration="800"
         >
-            <div className="container mx-auto px-4 md:px-8">
+            <div className="container mx-auto px-6 md:px-10">
                 <div className="flex justify-between items-center">
                     {/* Logo */}
                     <motion.div
@@ -72,13 +72,13 @@ export default function Navbar() {
                         className="flex items-center"
                     >
                         <Link to="/" className="text-white flex items-center">
-                            <img src="/assets/logo.png" alt="Igenia" className="h-20 w-auto rounded-md" />
+                            <img src="/assets/logo.png" alt="Igenia" className="h-20 w-auto rounded-md" style={{ maxWidth: '200px' }} />
                         </Link>
                     </motion.div>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-8">
-                        <div className="flex space-x-6">
+                    {/* Desktop Navigation - Now on right side */}
+                    <div className="hidden md:flex items-center">
+                        <div className="flex space-x-5">
                             {navLinks.map((link, index) => (
                                 <motion.div
                                     key={index}
@@ -89,9 +89,9 @@ export default function Navbar() {
                                 >
                                     <Link
                                         to={link.path}
-                                        className={`text-base font-medium transition-colors hover:text-[#AD49E1] ${isActive(link.path)
-                                                ? 'text-[#AD49E1] font-semibold'
-                                                : scrolled ? 'text-white' : 'text-white'
+                                        className={`text-sm font-medium transition-colors hover:text-[#AD49E1] ${isActive(link.path)
+                                            ? 'text-[#AD49E1] font-semibold'
+                                            : scrolled ? 'text-white' : 'text-white'
                                             }`}
                                     >
                                         {t(link.title)}
@@ -213,8 +213,8 @@ export default function Navbar() {
                                     key={index}
                                     to={link.path}
                                     className={`transition-all py-2 ${isActive(link.path)
-                                            ? 'text-[#AD49E1] font-semibold bg-[#7A1CAC]/20 px-3 rounded-md'
-                                            : 'text-white hover:text-[#AD49E1] hover:pl-1'
+                                        ? 'text-[#AD49E1] font-semibold bg-[#7A1CAC]/20 px-3 rounded-md'
+                                        : 'text-white hover:text-[#AD49E1] hover:pl-1'
                                         }`}
                                     onClick={() => setIsOpen(false)}
                                 >

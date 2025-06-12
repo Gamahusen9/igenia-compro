@@ -2,8 +2,9 @@ export default function getProductList() {
     return [
         {
             id: 1,
-            title: 'KOPITA (Aplikasi Koperasi Umum & Karyawan',
+            title: 'KOPITA (Aplikasi Koperasi Umum & Karyawan)',
             img: '/assets/products/project-kopita.png',
+            faceImg: '/assets/products/mockup-laptop-kopita.png',
             description: 'Aplikasi yang dirancang untuk membantu mengelola operasional koperasi secara lebih efisien dan terintegrasi. Koperasi sebagai lembaga ekonomi yang dimiliki dan dikelola oleh anggotanya memerlukan sistem manajemen yang baik untuk mengelola simpanan, pinjaman, pembagian SHU (Sisa Hasil Usaha), dan aktivitas lainnya. ',
             features: [
                 'Manajemen anggota',
@@ -28,6 +29,7 @@ export default function getProductList() {
             id: 2,
             title: 'Mobi (Aplikasi Mobile Digital)',
             img: '/assets/products/project-mobi.png',
+            faceImg: '/assets/products/platforms/mobile-platform.png',
             description: 'Aplikasi mobile banking digital dengan banyak fitur transaksional di dalamnya. sudah memenuhi standarisasi regulasi. Membangun Aplikasi digital, Pelaku usaha digital dan startup memerlukan effort sangat besar besar dari sisi biaya, SDM, waktu, hingga bisnis model. Mobi hadir untuk membantu para pelaku usaha digital dan startup dapat bergerak cepat dalam perkembangan pasar yang cepat..',
             features: [
                 'QRIS',
@@ -51,6 +53,7 @@ export default function getProductList() {
             id: 3,
             title: 'EKO (ERP Kontraktor)',
             img: '/assets/products/project-bro.png',
+            faceImg: '/assets/products/platforms/web-platform.png',
             description: 'Aplikasi ERP Sipil untuk kontraktor sekala kecil dan menengah ini hadir untuk memenuhi kebutuhan pelaku bisnis kontraktor, dimana aplikasi ini dibuat End to End mulai dari proses pendafaran calon nasabah, proses penwaran, pelaksanaan, hingga penutupan, Aplikasi ini dilengkapi dengan database AHSP yang sudah sesuai dengan standar perhitungan nasional.',
             features: [
                 'Modul Customer',
@@ -76,6 +79,7 @@ export default function getProductList() {
             id: 4,
             title: 'Payow (POS dan Warung Digital)',
             img: '/assets/products/project-payow.png',
+            faceImg: '/assets/products/platforms/hybrid-platform.png',
             description: 'Produk utama IGENIA , POS yang berbasis B2B, B2C, dan C2C dimana para pengguna dan pelaku bisnis dapat menggunakan untuk menjual berbagai produk digital mulai dari pembayaran, tiket, PPOB, hingga voucher kepada para pelanggan atau anggotanya.',
             features: [
                 'Modul Customer',
@@ -99,6 +103,7 @@ export default function getProductList() {
             id: 5,
             title: 'PANDAWA (Protection and Data Warden)',
             img: '/assets/products/project-pandawa.png',
+            faceImg: '/assets/products/platforms/web-platform.png',
             description: 'Aplikasi yang dirancang untuk membantu pengguna melindungi informasi pribadi mereka dari akses yang tidak sah, kebocoran data, atau penyalahgunaan. Dengan meningkatnya ancaman keamanan siber dan pelanggaran data, aplikasi semacam ini menjadi semakin penting bagi individu dan organisasi. aplikasi ini juga sudah di sesuaikan dengan kebutuhan standar Undang-Undang Nomor 27 Tahun 2022 tentang Perlindungan Data Pribadi (UU PDP) yang disahkan pada 17 Oktober 2022.',
             features: [
                 'Enkripsi Data',
@@ -122,6 +127,7 @@ export default function getProductList() {
             id: 6,
             title: 'ARJUNA (Aplikasi Rekam Jejak Uang Nasabah)',
             img: '/assets/products/project-arjuna.png',
+            faceImg: '/assets/products/platforms/hybrid-platform.png',
             description: 'Aplikasi yang dirancang untuk membantu pengguna melindungi informasi pribadi mereka dari akses yang tidak sah, kebocoran data, atau penyalahgunaan. Dengan meningkatnya ancaman keamanan siber dan pelanggaran data, aplikasi semacam ini menjadi semakin penting bagi individu dan organisasi. aplikasi ini juga sudah di sesuaikan dengan kebutuhan standar Undang-Undang Nomor 27 Tahun 2022 tentang Perlindungan Data Pribadi (UU PDP) yang disahkan pada 17 Oktober 2022.',
             features: [
                 'Enkripsi Data',

@@ -81,7 +81,9 @@
   "productsSection": {
     "title": "Produk Kami",
     "subtitle": "Jelajahi produk inovatif kami yang dirancang untuk mentransformasi bisnis Anda",
-    "detailsButton": "Detail"
+    "detailsButton": "Detail",
+    "mobileApp": "Mobile App",
+    "webApp": "Laman Web"
   },
   "blogSection": {
     "title": "Blog Terbaru",
