@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
@@ -8,6 +8,10 @@ import getServiceCategories from '../../../core/data/list-services';
 
 const Services = () => {
     const { t } = useTranslation();
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [touchStart, setTouchStart] = useState(0);
+    const [touchEnd, setTouchEnd] = useState(0);
+    const carouselRef = useRef(null);
 
     // Initialize AOS animation library
     React.useEffect(() => {
@@ -21,16 +25,61 @@ const Services = () => {
     // Get services data from imported function
     const serviceCategories = getServiceCategories(t);
 
-    // Animation variants
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2
+    // Calculate how many items to show based on screen size
+    const [itemsToShow, setItemsToShow] = useState(3);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 640) {
+                setItemsToShow(1);
+            } else if (window.innerWidth < 1024) {
+                setItemsToShow(2);
+            } else {
+                setItemsToShow(3);
             }
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    // Handle slide navigation
+    const totalSlides = serviceCategories.length;
+    const maxIndex = Math.max(0, totalSlides - itemsToShow);
+
+    const nextSlide = () => {
+        setActiveIndex(prev => Math.min(prev + 1, maxIndex));
+    };
+
+    const prevSlide = () => {
+        setActiveIndex(prev => Math.max(prev - 1, 0));
+    };
+
+    // Touch handlers for mobile swipe
+    const handleTouchStart = (e) => {
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchMove = (e) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        if (touchStart - touchEnd > 50) {
+            nextSlide();
         }
-    }; const itemVariants = {
+
+        if (touchStart - touchEnd < -50) {
+            prevSlide();
+        }
+    };
+
+    // Animation variants for items
+    const itemVariants = {
         hidden: { opacity: 0, y: 20 },
         visible: {
             opacity: 1,
@@ -40,9 +89,22 @@ const Services = () => {
         hover: {
             scale: 1.05,
             boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.2)",
-            transition: { type: "spring", stiffness: 400, damping: 10 }
+            transition: { type: "spring", stiffness: 300, damping: 10 }
         }
     };
+
+    // Auto-rotation effect
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (activeIndex < maxIndex) {
+                nextSlide();
+            } else {
+                setActiveIndex(0);
+            }
+        }, 6000);
+        return () => clearInterval(interval);
+    }, [activeIndex, maxIndex]);
+
     return (
         <section id="services" className="py-24 overflow-hidden relative bg-white">
             {/* Decorative elements for white background */}
@@ -128,84 +190,133 @@ const Services = () => {
                     </p>
                 </motion.div>
 
-                {/* Service Categories */}
-                <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.1 }}
-                >
-                    {/* Service cards */}
-                    {serviceCategories.map((category, index) => (
-                        <motion.div
-                            key={index}
-                            className="relative z-10 rounded-xl overflow-hidden"
-                            variants={itemVariants}
-                            whileHover="hover"
+                {/* Multi-item Carousel */}
+                <div className="relative">
+                    {/* Carousel container */}
+                    <div
+                        ref={carouselRef}
+                        className="overflow-hidden"
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
+                    >
+                        <div
+                            className="flex transition-transform duration-500 ease-out"
+                            style={{ transform: `translateX(-${activeIndex * (100 / itemsToShow)}%)` }}
                         >
-                            <div className="p-6 md:p-8 bg-gradient-to-br from-white to-gray-100 rounded-xl border border-gray-200 shadow-lg h-full flex flex-col">
-                                <div className="flex items-center space-x-4 mb-6">
-                                    <span className="text-purple-600 bg-purple-50 p-3 rounded-lg shadow-inner">
-                                        {category.icon}
-                                    </span>
-                                    <h3 className="text-xl font-bold text-purple-800">{category.title}</h3>
-                                </div>
-
-                                <ul className="space-y-3 relative z-10">
-                                    <AnimatePresence>
-                                        {category.services.map((service, index) => (<motion.li
-                                            key={index}
-                                            className="flex items-center text-gray-700 hover:text-purple-700 transition-colors"
-                                            initial={{ opacity: 0, x: -10 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            exit={{ opacity: 0, x: 10 }}
-                                            transition={{
-                                                type: "spring",
-                                                stiffness: 300,
-                                                delay: index * 0.1
-                                            }}
-                                        >
-                                            <span className="text-purple-600 mr-3 bg-purple-100 p-2 rounded-md">
-                                                {service.icon}
+                            {serviceCategories.map((category, index) => (
+                                <div
+                                    key={index}
+                                    className={`flex-shrink-0`}
+                                    style={{ width: `${100 / itemsToShow}%`, padding: '0 12px' }}
+                                >
+                                    <motion.div
+                                        className="bg-gradient-to-br from-white to-gray-100 rounded-xl border border-gray-200 shadow-lg h-full p-6"
+                                        variants={itemVariants}
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        whileHover="hover"
+                                        viewport={{ once: true }}
+                                    >
+                                        {/* Centered icon */}
+                                        <div className="flex justify-center mb-6">
+                                            <span className="text-purple-600 bg-purple-50 p-5 rounded-full shadow-inner inline-block">
+                                                <div className="text-4xl md:text-5xl">
+                                                    {category.icon}
+                                                </div>
                                             </span>
-                                            <span>{service.name}</span>
-                                        </motion.li>
-                                        ))}
-                                    </AnimatePresence>
-                                </ul>
-                            </div>
+                                        </div>
 
-                            {/* Animated decorative elements */}
-                            <motion.div
-                                className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full opacity-20"
-                                animate={{
-                                    scale: [1, 1.2, 1],
-                                    opacity: [0.2, 0.3, 0.2],
-                                }}
-                                transition={{
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    ease: "easeInOut"
-                                }}
-                            />
+                                        {/* Category title */}
+                                        <h3 className="text-xl md:text-2xl font-bold text-purple-800 mb-4 text-center">
+                                            {category.title}
+                                        </h3>
 
-                            <motion.div
-                                className="absolute -top-2 -left-2 w-8 h-8 bg-gradient-to-r from-purple-300 to-purple-500 rounded-full opacity-20"
-                                animate={{
-                                    scale: [1, 1.3, 1],
-                                    opacity: [0.15, 0.25, 0.15],
-                                }}
-                                transition={{
-                                    duration: 4,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                    delay: 1.5
-                                }}
-                            />
-                        </motion.div>
-                    ))}
-                </motion.div>
+                                        {/* Services displayed as tags/pills */}
+                                        <div className="flex flex-wrap justify-center gap-2 mt-4">
+                                            {category.services.slice(0, 4).map((service, idx) => (
+                                                <motion.div
+                                                    key={idx}
+                                                    className="bg-purple-100 text-purple-700 px-3 py-1.5 rounded-full flex items-center text-sm"
+                                                    initial={{ opacity: 0, scale: 0.8 }}
+                                                    animate={{ opacity: 1, scale: 1 }}
+                                                    transition={{ delay: idx * 0.1 }}
+                                                >
+                                                    <span className="mr-1.5">{service.icon}</span>
+                                                    <span>{service.name}</span>
+                                                </motion.div>
+                                            ))}
+                                            {category.services.length > 4 && (
+                                                <motion.div
+                                                    className="bg-purple-200 text-purple-800 px-3 py-1.5 rounded-full text-sm"
+                                                    initial={{ opacity: 0, scale: 0.8 }}
+                                                    animate={{ opacity: 1, scale: 1 }}
+                                                    transition={{ delay: 0.5 }}
+                                                >
+                                                    +{category.services.length - 4}
+                                                </motion.div>
+                                            )}
+                                        </div>
+                                    </motion.div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Carousel Navigation Controls */}
+                    {activeIndex > 0 && (
+                        <button
+                            onClick={prevSlide}
+                            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white text-purple-700 p-2 rounded-full shadow-md z-10"
+                            aria-label="Previous services"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                    )}
+
+                    {activeIndex < maxIndex && (
+                        <button
+                            onClick={nextSlide}
+                            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white text-purple-700 p-2 rounded-full shadow-md z-10"
+                            aria-label="Next services"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    )}
+
+                    {/* Dots indicator */}
+                    {itemsToShow === 1 && (
+                        <div className="flex justify-center mt-8 space-x-2">
+                            {Array.from({ length: totalSlides }).map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setActiveIndex(index)}
+                                    className={`w-3 h-3 rounded-full transition-colors ${index === activeIndex ? 'bg-purple-600' : 'bg-gray-300'
+                                        }`}
+                                    aria-label={`Go to slide ${index + 1}`}
+                                />
+                            ))}
+                        </div>
+                    )}
+
+                    {itemsToShow > 1 && (
+                        <div className="flex justify-center mt-8 space-x-2">
+                            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setActiveIndex(index)}
+                                    className={`w-3 h-3 rounded-full transition-colors ${index === activeIndex ? 'bg-purple-600' : 'bg-gray-300'
+                                        }`}
+                                    aria-label={`Go to slide group ${index + 1}`}
+                                />
+                            ))}
+                        </div>
+                    )}
+                </div>
             </div>
         </section>
     );
