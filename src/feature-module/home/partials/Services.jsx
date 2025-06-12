@@ -195,31 +195,7 @@ const Services = () => {
                         </motion.div>
                     </motion.div>
                 ))}
-            </motion.div>                {/* CTA */}
-            <motion.div
-                className="mt-20 text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.7, delay: 0.5 }}
-            >
-                <div className="p-10 bg-gradient-to-r from-purple-900/20 to-purple-800/20 rounded-xl backdrop-blur-sm border border-purple-500/10 max-w-4xl mx-auto relative overflow-hidden">
-                    {/* Decorative elements */}
-                    <div className="absolute top-0 right-0 h-24 w-24 bg-purple-600/20 rounded-full blur-xl"></div>
-                    <div className="absolute bottom-0 left-0 h-32 w-32 bg-purple-800/20 rounded-full blur-xl"></div>                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4" data-aos="fade-up">
-                        {t('servicesSection.readyToTransform')}
-                    </h3>
-                    <p className="text-gray-300 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                        {t('servicesSection.contactText')}
-                    </p>                    <button
-                        className="bg-[#7A1CAC] hover:bg-[#AD49E1] text-white px-8 py-4 rounded-md font-medium transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-purple-800/30"
-                        data-aos="zoom-in"
-                        data-aos-delay="200"
-                    >
-                        {t('servicesSection.consultButton')}
-                    </button>
-                </div>
-            </motion.div>
+            </motion.div>               
         </div>
     </section>
     );
