@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import AOS from 'aos';
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 import 'aos/dist/aos.css';
 import { FaChevronLeft, FaChevronRight, FaArrowRight, FaImage } from 'react-icons/fa';
 import getProductList from '../../../core/data/list-product';
@@ -152,32 +154,43 @@ const Product = () => {
     };    // 3D effect removed
 
     return (
-        <section id="products" className="py-20 overflow-hidden relative">
-            <div className="container mx-auto px-4 md:px-8">
+        <section id="products" className="py-24 overflow-hidden relative">
+            {/* Enhanced decorative elements for purple theme */}
+            <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-r from-[#AD49E1]/30 to-[#7A1CAC]/20 rounded-full blur-3xl -z-0"></div>
+            <div className="absolute bottom-20 left-20 w-64 h-64 bg-gradient-to-r from-[#7A1CAC]/20 to-[#AD49E1]/30 rounded-full blur-3xl -z-0"></div>
+
+            <div className="container mx-auto px-4 md:px-8 relative z-10">
                 {/* Section Header */}
-                <div className="text-center mb-12 relative">
+                <div className="text-center mb-16 relative">
                     <div className="inline-block relative">
                         {/* Animated gear icon */}
-                        <div className="absolute -top-6 -right-6 w-12 h-12 opacity-30">
+                        <motion.div
+                            className="absolute -top-8 -right-8 w-16 h-16 opacity-40"
+                            animate={{
+                                rotate: 360,
+                                scale: [1, 1.1, 1]
+                            }}
+                            transition={{
+                                rotate: { duration: 25, repeat: Infinity, ease: "linear" },
+                                scale: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+                            }}
+                        >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
-                                className="w-full h-full text-purple-300 animate-spin"
-                                style={{ animationDuration: '25s' }}
+                                className="w-full h-full text-purple-300"
                             >
                                 <path fill="currentColor" d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66Z" />
                             </svg>
-                        </div>
-
-                        <h2
-                            className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#AD49E1] to-white bg-clip-text text-transparent mb-4 relative z-10"
+                        </motion.div>                        <h2
+                            className="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10"
                             data-aos="zoom-in"
                         >
                             {t('productsSection.title')}
                         </h2>
                     </div>
                     <div className="w-24 h-1 bg-gradient-to-r from-[#AD49E1] to-[#7A1CAC] mx-auto"></div>
-                    <p className="text-gray-300 mt-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    <p className="text-gray-300 mt-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
                         {t('productsSection.subtitle')}
                     </p>
                 </div>
