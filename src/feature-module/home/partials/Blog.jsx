@@ -66,8 +66,8 @@ const Blog = () => {
     const limitedBlogPosts = blogPosts.slice(0, 3);
 
     return (
-        <section id="blog" className="py-24 overflow-hidden relative">
-            <div className="container mx-auto px-4 md:px-8">
+        <section id="blog" className="min-h-screen flex flex-col justify-center py-12 overflow-hidden relative">
+            <div className="container mx-auto px-4 md:px-8 flex-grow flex flex-col justify-center">
                 {/* Section Header */}
                 <motion.div
                     className="text-center mb-16 relative"
@@ -123,7 +123,7 @@ const Blog = () => {
 
                 {/* Blog Posts Grid */}
                 <motion.div
-                    className="grid md:grid-cols-3 gap-8"
+                    className="grid md:grid-cols-3 gap-8 flex-grow max-w-5xl mx-auto w-full"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -143,8 +143,8 @@ const Blog = () => {
                                     onHoverStart={() => setHoveredCard(post.id)}
                                     onHoverEnd={() => setHoveredCard(null)}
                                 >
-                                    {/* Image Section with hover effect */}
-                                    <div className="relative w-full h-48 overflow-hidden group cursor-pointer">
+                                    {/* Image Section with hover effect - reduced height */}
+                                    <div className="relative w-full h-40 overflow-hidden group cursor-pointer">
                                         <img
                                             src={post.image}
                                             alt={post.title}
@@ -180,8 +180,8 @@ const Blog = () => {
                                         </AnimatePresence>
                                     </div>
 
-                                    {/* Content Section */}
-                                    <div className="p-6 flex flex-col flex-grow relative z-10">
+                                    {/* Content Section - reduced padding */}
+                                    <div className="p-4 flex flex-col flex-grow relative z-10">
                                         {/* Background pattern */}
                                         <div className="absolute top-0 left-0 w-full h-full opacity-5">
                                             <div className="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-purple-500/30"></div>
@@ -189,10 +189,10 @@ const Blog = () => {
                                         </div>
 
                                         <div className="relative z-10">
-                                            <h3 className="text-xl font-semibold text-[#AD49E1] mb-2 line-clamp-2">
+                                            <h3 className="text-lg font-semibold text-[#AD49E1] mb-2 line-clamp-2">
                                                 {post.title}
                                             </h3>
-                                            <p className="text-gray-300 mb-4 text-sm line-clamp-3">
+                                            <p className="text-gray-300 mb-3 text-sm line-clamp-2">
                                                 {post.excerpt}
                                             </p>
                                         </div>
@@ -224,7 +224,7 @@ const Blog = () => {
                     ))}
                 </motion.div>
 
-                {/* View All Button */}
+                {/* View All Button - made more prominent */}
                 <motion.div
                     className="flex justify-center mt-12"
                     initial={{ opacity: 0, y: 20 }}
@@ -234,10 +234,10 @@ const Blog = () => {
                 >
                     <Link to="/blog">
                         <motion.button
-                            className="bg-gradient-to-r from-[#AD49E1] to-[#7A1CAC] text-white py-3 px-8 rounded-full font-medium shadow-lg shadow-purple-500/20"
+                            className="bg-gradient-to-r from-[#AD49E1] to-[#7A1CAC] text-white py-3.5 px-10 rounded-full font-medium shadow-lg shadow-purple-500/20"
                             whileHover={{
                                 scale: 1.05,
-                                boxShadow: "0 0 15px rgba(173, 73, 225, 0.5)"
+                                boxShadow: "0 0 20px rgba(173, 73, 225, 0.5)"
                             }}
                             whileTap={{ scale: 0.98 }}
                         >

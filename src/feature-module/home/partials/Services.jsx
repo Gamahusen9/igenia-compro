@@ -106,7 +106,7 @@ const Services = () => {
     }, [activeIndex, maxIndex]);
 
     return (
-        <section id="services" className="py-24 overflow-hidden relative bg-white">
+        <section id="services" className="min-h-screen flex flex-col justify-center py-12 overflow-hidden relative bg-white">
             {/* Decorative elements for white background */}
             <motion.div
                 className="absolute top-0 left-1/3 w-24 h-24 rounded-full bg-gradient-to-br from-purple-100 to-gray-100 blur-xl opacity-60"
@@ -134,7 +134,7 @@ const Services = () => {
                 }}
             />
 
-            <div className="container mx-auto px-4 md:px-8">
+            <div className="container mx-auto px-4 md:px-8 flex-grow flex flex-col justify-center">
                 {/* Section Header */}
                 <motion.div
                     className="text-center mb-16 relative"
@@ -191,11 +191,11 @@ const Services = () => {
                 </motion.div>
 
                 {/* Multi-item Carousel */}
-                <div className="relative">
+                <div className="relative flex-grow flex flex-col justify-center">
                     {/* Carousel container */}
                     <div
                         ref={carouselRef}
-                        className="overflow-hidden"
+                        className="relative"
                         onTouchStart={handleTouchStart}
                         onTouchMove={handleTouchMove}
                         onTouchEnd={handleTouchEnd}
