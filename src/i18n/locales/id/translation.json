@@ -105,7 +105,9 @@
     "publishedOn": "Dipublikasikan pada"
   },
   "clientSection": {
-    "title": "Partner Kami"
+    "title": "Partner Kami",
+    "subtitle": "Berbagai bisnis dari semua skala mempercayai iGenia untuk menyediakan solusi digital inovatif.",
+    "joinButton": "Menjadi Partner Kami"
   },
   "contactSection": {
     "title": "Hubungi Kami",
