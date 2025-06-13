@@ -2,9 +2,11 @@ import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function MainContent() {
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     // Initialize particles
     const particlesInit = useCallback(async (engine) => {
@@ -15,6 +17,20 @@ export default function MainContent() {
     const particlesLoaded = useCallback(async (container) => {
         console.log('Particles loaded:', container);
     }, []);
+
+    const handleContactClick = () => {
+        navigate('/contact-us');
+    };
+
+    const handleServicesClick = () => {
+        const servicesSection = document.getElementById('services');
+        if (servicesSection) {
+            servicesSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
 
     return (
         <div
@@ -112,12 +128,14 @@ export default function MainContent() {
                             data-aos-duration="800"
                         >
                             <button
+                                onClick={handleContactClick}
                                 className="bg-[#7A1CAC] hover:bg-[#AD49E1] text-white px-8 py-4 rounded-md font-medium transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-purple-800/30"
                             >
                                 {t('navigation.contact')}
                             </button>
 
                             <button
+                                onClick={handleServicesClick}
                                 className="border-2 border-[#7A1CAC] hover:border-[#AD49E1] text-white hover:text-[#AD49E1] px-8 py-4 rounded-md font-medium transition-all duration-300 hover:scale-105 active:scale-95 backdrop-blur-sm"
                             >
                                 {t('navigation.services')}

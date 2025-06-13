@@ -1,3 +1,24 @@
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('/assets/font/codec-pro/CodecPro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('/assets/font/codec-pro/CodecPro-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('/assets/font/codec-pro/CodecPro-ExtraBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
