@@ -65,49 +65,55 @@ export default function Navbar() {
             <div className="container mx-auto px-6 md:px-10">
                 <div className="flex justify-between items-center">
                     {/* Logo */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="flex items-center"
-                    >
-                        <Link to="/" className="text-white flex items-center">
-                            <img src="/assets/logo.png" alt="Igenia" className="h-20 w-auto rounded-md" style={{ maxWidth: '200px' }} />
-                        </Link>
-                    </motion.div>
+                    <div className="flex items-center">
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <Link to="/" className="text-white flex items-center">
+                                <img src="/assets/logo.png" alt="Igenia" className="h-20 w-auto rounded-md" style={{ maxWidth: '200px' }} />
+                            </Link>
+                        </motion.div>
 
-                    {/* Desktop Navigation - Now on right side */}
-                    <div className="hidden md:flex items-center">
-                        <div className="flex space-x-5">
-                            {navLinks.map((link, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                                    className="relative"
-                                >
-                                    <Link
-                                        to={link.path}
-                                        className={`text-sm font-medium transition-colors hover:text-[#AD49E1] ${isActive(link.path)
-                                            ? 'text-[#AD49E1] font-semibold'
-                                            : scrolled ? 'text-white' : 'text-white'
-                                            }`}
+                        {/* Desktop Navigation - Now on left side next to logo */}
+                        <div className="hidden md:flex items-center ml-10">
+                            <div className="flex space-x-5">
+                                {navLinks.map((link, index) => (
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                                        className="relative"
                                     >
-                                        {t(link.title)}
-                                        {isActive(link.path) && (
-                                            <motion.div
-                                                className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#AD49E1] rounded-full"
-                                                layoutId="navbar-underline"
-                                                initial={{ opacity: 0 }}
-                                                animate={{ opacity: 1 }}
-                                                transition={{ duration: 0.3 }}
-                                            />
-                                        )}
-                                    </Link>
-                                </motion.div>
-                            ))}
-                        </div>                        {/* Language Selector */}
+                                        <Link
+                                            to={link.path}
+                                            className={`text-sm font-medium transition-colors hover:text-[#AD49E1] ${isActive(link.path)
+                                                ? 'text-[#AD49E1] font-semibold'
+                                                : scrolled ? 'text-white' : 'text-white'
+                                                }`}
+                                        >
+                                            {t(link.title)}
+                                            {isActive(link.path) && (
+                                                <motion.div
+                                                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#AD49E1] rounded-full"
+                                                    layoutId="navbar-underline"
+                                                    initial={{ opacity: 0 }}
+                                                    animate={{ opacity: 1 }}
+                                                    transition={{ duration: 0.3 }}
+                                                />
+                                            )}
+                                        </Link>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right side elements: Language Selector and Contact Button */}
+                    <div className="hidden md:flex items-center space-x-4">
+                        {/* Language Selector */}
                         <div className="relative language-selector">
                             <motion.button
                                 onClick={() => setShowLanguages(!showLanguages)}
@@ -121,7 +127,7 @@ export default function Navbar() {
                                 <img
                                     src={getCurrentLanguage().flag}
                                     alt={getCurrentLanguage().code}
-                                    className="w-6 h-6 rounded-sm border border-white/20 object-cover shadow-sm"
+                                    className="w-6 h-6 rounded-sm object-cover"
                                 />
                                 <span className="text-white text-sm font-medium">{getCurrentLanguage().code.toUpperCase()}</span>
                                 <svg
@@ -157,7 +163,7 @@ export default function Navbar() {
                                                 <img
                                                     src={lang.flag}
                                                     alt={lang.code}
-                                                    className="w-5 h-5 rounded-sm border border-white/20 object-cover shadow-sm"
+                                                    className="w-5 h-5 rounded-sm object-cover"
                                                 />
                                                 <span className="text-sm">{lang.name}</span>
                                                 {i18n.language === lang.code && (
@@ -178,6 +184,19 @@ export default function Navbar() {
                                 )}
                             </AnimatePresence>
                         </div>
+
+                        {/* Hubungi Kami Button - Now more rounded and smooth */}
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <Link
+                                to="/contact-us"
+                                className="bg-[#AD49E1] hover:bg-[#7A1CAC] text-white font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-md"
+                            >
+                                {t('navigation.contactUs') || 'Hubungi Kami'}
+                            </Link>
+                        </motion.div>
                     </div>
 
                     {/* Mobile Navigation Toggle */}
@@ -230,6 +249,16 @@ export default function Navbar() {
                                     </div>
                                 </Link>
                             ))}
+
+                            {/* Contact Us Button for Mobile - Now more rounded */}
+                            <Link
+                                to="/contact-us"
+                                className="bg-[#AD49E1] hover:bg-[#7A1CAC] text-white font-medium py-3 mt-2 rounded-full transition-all duration-300 text-center"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {t('hubungi_kami') || 'Hubungi Kami'}
+                            </Link>
+
                             {/* Mobile Language Selector */}
                             <div className="flex flex-col space-y-2 pt-3 border-t border-[#7A1CAC]/30">
                                 <p className="text-white/70 text-xs uppercase tracking-wider mb-1">
@@ -253,7 +282,7 @@ export default function Navbar() {
                                             <img
                                                 src={lang.flag}
                                                 alt={lang.code}
-                                                className="w-5 h-5 rounded-sm object-cover border border-white/20 shadow-sm"
+                                                className="w-5 h-5 rounded-sm object-cover"
                                             />
                                             <span className="text-sm font-medium">{lang.name}</span>
                                             {i18n.language === lang.code && (

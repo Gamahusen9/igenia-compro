@@ -12,7 +12,25 @@
   },
   "select_language": "Select Language",
 
-  "contact": "Contact",
+  "contact": {
+    "title": "Contact Us",
+    "description": "Have a project in mind or want to collaborate? Fill out the form below and we'll get back to you soon!",
+    "form": {
+      "title": "Send Message",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "sendButton": "Send Message",
+      "thankYou": "Thank You!",
+      "messageReceived": "Your message has been received."
+    },
+    "info": {
+      "contact_us": "Contact Us",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
+    }
+  },
   "aboutSection": {
     "title": "About Igenia",
     "shortDescription": "Igenia is an innovative technology company focused on developing digital solutions to help businesses in their digital transformation. With deep experience and cutting-edge technology, we're ready to be your business success partner.",

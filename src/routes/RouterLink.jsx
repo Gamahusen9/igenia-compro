@@ -4,6 +4,7 @@ import ProductLayout from "../feature-module/product/ProductLayout";
 import AboutLayout from "../feature-module/about/AboutLayout";
 import BlogList from "../feature-module/blog/BlogList";
 import BlogDetail from "../feature-module/blog/BlogDetail";
+import ContactUsLayout from "../feature-module/contact/ContactUsLayout";
 
 export const RouterLink = {
     home: HomeLayout,
@@ -12,4 +13,5 @@ export const RouterLink = {
     blog: BlogList,
     blogDetail: BlogDetail,
     productDetail: ProductLayout,
+    contactUs: ContactUsLayout
 };

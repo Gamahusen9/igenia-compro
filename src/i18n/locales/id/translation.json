@@ -203,5 +203,24 @@
     "value3Text": "Kepuasan klien adalah prioritas utama kami. Kami tidak hanya menyediakan solusi teknologi, tetapi juga menjadi mitra yang siap mendukung pertumbuhan bisnis Anda. Dengan layanan purna jual yang responsif dan profesional, kami memastikan bahwa setiap solusi yang kami berikan terus memberikan nilai tambah bagi bisnis Anda..",
     "ctaTitle": "Siap Bekerja Sama Dengan Kami?",
     "ctaText": "Mari berkolaborasi untuk mentransformasikan bisnis Anda dengan solusi digital inovatif kami. Hubungi kami hari ini untuk konsultasi."
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "description": "Punya proyek yang ingin dijalankan atau ingin berkolaborasi? Isi formulir di bawah ini dan kami akan segera menghubungi Anda!",
+    "form": {
+      "title": "Kirim Pesan",
+      "name": "Nama",
+      "email": "Email",
+      "message": "Pesan",
+      "sendButton": "Kirim Pesan",
+      "thankYou": "Terima Kasih!",
+      "messageReceived": "Pesan Anda telah kami terima."
+    },
+    "info": {
+      "contact_us": "Hubungi Kami",
+      "email": "Email",
+      "phone": "Telepon",
+      "address": "Alamat"
+    }
   }
 }

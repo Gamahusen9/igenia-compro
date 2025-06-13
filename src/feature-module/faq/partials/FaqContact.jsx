@@ -28,7 +28,7 @@ export default function FaqContact() {
                     whileTap={{ scale: 0.95 }}
                 >
                     <Link
-                        to="/contact"
+                        to="/contact-us"
                         className="inline-flex items-center px-8 py-4 rounded-full bg-[#AD49E1] hover:bg-[#9B25D3] text-white font-medium transition-colors duration-300 shadow-lg"
                     >
                         <span>{t('faq.contact_us')}</span>

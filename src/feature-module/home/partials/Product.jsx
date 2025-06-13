@@ -233,35 +233,35 @@ const Product = () => {
                     transition={{ duration: 0.7 }}
                 >
                     <div className="inline-block relative">
-                        {/* Replaced gear icon with Android and code icons */}
-                        <div className="absolute -top-8 -right-8 flex gap-2">
-                            <motion.div
-                                className="w-8 h-8 opacity-60"
-                                animate={{
-                                    rotate: [0, 10, 0, -10, 0],
-                                    scale: [1, 1.1, 1]
-                                }}
-                                transition={{
-                                    rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-                                    scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-                                }}
-                            >
-                                <FaMobileAlt className="w-full h-full text-purple-300" />
-                            </motion.div>
-                            <motion.div
-                                className="w-8 h-8 opacity-60"
-                                animate={{
-                                    rotate: [0, -10, 0, 10, 0],
-                                    scale: [1, 1.1, 1]
-                                }}
-                                transition={{
-                                    rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-                                    scale: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
-                                }}
-                            >
-                                <FaLaptopCode className="w-full h-full text-purple-300" />
-                            </motion.div>
-                        </div>
+                        {/* Mobile app icon in top-right, matching Services.jsx positioning */}
+                        <motion.div
+                            className="absolute -top-8 -right-8 w-16 h-16 opacity-50"
+                            animate={{
+                                rotate: 360,
+                                scale: [1, 1.1, 1]
+                            }}
+                            transition={{
+                                rotate: { duration: 30, repeat: Infinity, ease: "linear" },
+                                scale: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+                            }}
+                        >
+                            <FaMobileAlt className="w-full h-full text-purple-300" />
+                        </motion.div>
+
+                        {/* Laptop/code icon in bottom-left, matching Services.jsx positioning */}
+                        <motion.div
+                            className="absolute -bottom-8 -left-8 w-16 h-16 opacity-50"
+                            animate={{
+                                rotate: -360,
+                                scale: [1, 1.15, 1]
+                            }}
+                            transition={{
+                                rotate: { duration: 35, repeat: Infinity, ease: "linear" },
+                                scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                            }}
+                        >
+                            <FaLaptopCode className="w-full h-full text-purple-300" />
+                        </motion.div>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10"
                             data-aos="zoom-in"

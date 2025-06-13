@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import PageHeader from '../../../components/common/PageHeader';
+import PageHeader from '../../../components/PageHeader';
 
 export default function FaqHeader() {
     const { t } = useTranslation();

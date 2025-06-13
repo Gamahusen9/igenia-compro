@@ -32,4 +32,9 @@ export const RouterConfig = [
         path: RouterPath.productDetail,
         element: <RouterLink.productDetail />,
     },
+    {
+        name: 'contactUs',
+        path: RouterPath.contactUs,
+        element: <RouterLink.contactUs />,
+    },
 ];
