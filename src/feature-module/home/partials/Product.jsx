@@ -18,6 +18,21 @@ const Product = () => {
     // Get product data from imported function
     const products = getProductList();
 
+    // Function to get platform label based on product type
+    const getPlatformLabel = (platform) => {
+        switch (platform) {
+            case 'web':
+                return 'Web Apps';
+            case 'mobile':
+                return 'Mobile Apps';
+            case 'web-mobile':
+            case 'mobile-web':
+                return 'Mobile & Web Apps';
+            default:
+                return 'App';
+        }
+    };
+
     useEffect(() => {
         AOS.init({
             duration: 800,
@@ -218,26 +233,35 @@ const Product = () => {
                     transition={{ duration: 0.7 }}
                 >
                     <div className="inline-block relative">
-                        {/* Animated gear icon - adjusted to match Blog.jsx */}
-                        <motion.div
-                            className="absolute -top-8 -right-8 w-16 h-16 opacity-30"
-                            animate={{
-                                rotate: 360,
-                                scale: [1, 1.1, 1]
-                            }}
-                            transition={{
-                                rotate: { duration: 25, repeat: Infinity, ease: "linear" },
-                                scale: { duration: 5, repeat: Infinity, ease: "easeInOut" }
-                            }}
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                className="w-full h-full text-purple-300"
+                        {/* Replaced gear icon with Android and code icons */}
+                        <div className="absolute -top-8 -right-8 flex gap-2">
+                            <motion.div
+                                className="w-8 h-8 opacity-60"
+                                animate={{
+                                    rotate: [0, 10, 0, -10, 0],
+                                    scale: [1, 1.1, 1]
+                                }}
+                                transition={{
+                                    rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                                    scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                                }}
                             >
-                                <path fill="currentColor" d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66Z" />
-                            </svg>
-                        </motion.div>
+                                <FaMobileAlt className="w-full h-full text-purple-300" />
+                            </motion.div>
+                            <motion.div
+                                className="w-8 h-8 opacity-60"
+                                animate={{
+                                    rotate: [0, -10, 0, 10, 0],
+                                    scale: [1, 1.1, 1]
+                                }}
+                                transition={{
+                                    rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                                    scale: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
+                                }}
+                            >
+                                <FaLaptopCode className="w-full h-full text-purple-300" />
+                            </motion.div>
+                        </div>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10"
                             data-aos="zoom-in"
@@ -327,11 +351,11 @@ const Product = () => {
                         <div className="space-y-4 max-w-lg">
                             {/* Project number badge - smaller */}
                             <div className="inline-block bg-gradient-to-r from-[#AD49E1] to-[#7A1CAC] px-2 py-1 rounded-full text-xs font-semibold text-white mb-1">
-                                {t('productsSection.projectLabel')} {currentIndex + 1}/{products.length}
+                                {getPlatformLabel(products[currentIndex].platform)}
                             </div>
 
-                            {/* Project title with animated underline - smaller and no wrapping */}
-                            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white relative inline-block group whitespace-nowrap overflow-hidden text-ellipsis max-w-full">
+                            {/* Project title with animated underline - changed from inline-block to block for left alignment */}
+                            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white relative block group text-left overflow-hidden text-ellipsis max-w-full">
                                 {products[currentIndex].title}
                                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#AD49E1] to-[#7A1CAC] group-hover:w-full transition-all duration-700"></span>
                             </h3>

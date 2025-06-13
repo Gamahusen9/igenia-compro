@@ -4,5 +4,6 @@ export const RouterPath = {
     about: "/about",
     blog: "/blog",
     blogDetail: "/blog/:blogId",
-    productDetail: "/products/:productId"
+    productDetail: "/products/:productId", 
+    contactUs: "/contact-us",
 };

@@ -87,7 +87,7 @@ const Client = () => {
     // Animation variants
 
     return (
-        <section className="py-24 overflow-hidden relative bg-white">
+        <section className="min-h-screen flex flex-col justify-center py-8 overflow-hidden relative bg-white">
             {/* Enhanced decorative elements for white background */}
             <motion.div
                 className="absolute top-40 left-20 w-32 h-32 bg-gradient-to-r from-purple-50 to-gray-100 rounded-full blur-3xl"
@@ -115,13 +115,13 @@ const Client = () => {
                 }}
             />
 
-            <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <div className="container mx-auto px-4 md:px-6 relative z-10 flex-grow flex flex-col justify-center">
                 {/* Section Header */}
                 <motion.div
-                    className="text-center mb-10 relative"
+                    className="text-center mb-12 relative"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.1, margin: "-100px" }}
+                    viewport={{ once: true, amount: 0.1 }}
                     transition={{ duration: 0.7 }}
                 >
                     <div className="inline-block relative">
@@ -173,10 +173,10 @@ const Client = () => {
                 {/* Client Logo Carousel - Two rows with auto-scroll in opposite directions */}
                 <AnimatePresence>
                     {isLoaded && firstRowClients.length > 0 && secondRowClients.length > 0 && (
-                        <div className="overflow-hidden my-8">
+                        <div className="overflow-hidden my-4">
                             {/* First row - scrolling right to left */}
                             <motion.div
-                                className="flex py-4"
+                                className="flex py-2"
                                 initial={{ x: 0 }}
                                 animate={{ x: isPaused ? undefined : "-50%" }}
                                 transition={{
@@ -188,11 +188,11 @@ const Client = () => {
                                 {firstRowClients.map((client) => (
                                     <div
                                         key={client.uniqueId}
-                                        className="flex-shrink-0 px-4 relative group"
+                                        className="flex-shrink-0 px-3 relative group"
                                         onMouseEnter={() => handleMouseEnter(client.uniqueId)}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        <div className="h-32 w-48 flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 relative overflow-hidden">
+                                        <div className="h-28 w-44 flex items-center justify-center p-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 relative overflow-hidden">
                                             {/* Hover effect background gradient */}
                                             <motion.div
                                                 className="absolute inset-0 bg-gradient-to-tr from-purple-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -221,7 +221,7 @@ const Client = () => {
                                         </div>
                                         {/* Client name tooltip */}
                                         <motion.div
-                                            className="absolute -bottom-8 left-0 right-0 text-center text-sm text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none font-medium"
+                                            className="absolute -bottom-6 left-0 right-0 text-center text-sm text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none font-medium"
                                             initial={{ y: 10, opacity: 0 }}
                                             whileHover={{ y: 0, opacity: 1 }}
                                         >
@@ -233,7 +233,7 @@ const Client = () => {
 
                             {/* Second row - scrolling left to right */}
                             <motion.div
-                                className="flex py-4"
+                                className="flex py-2"
                                 initial={{ x: "-50%" }}
                                 animate={{ x: isPaused ? undefined : "0%" }}
                                 transition={{
@@ -245,11 +245,11 @@ const Client = () => {
                                 {secondRowClients.map((client) => (
                                     <div
                                         key={client.uniqueId}
-                                        className="flex-shrink-0 px-4 relative group"
+                                        className="flex-shrink-0 px-3 relative group"
                                         onMouseEnter={() => handleMouseEnter(client.uniqueId)}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        <div className="h-32 w-48 flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 relative overflow-hidden">
+                                        <div className="h-28 w-44 flex items-center justify-center p-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 relative overflow-hidden">
                                             {/* Hover effect background gradient */}
                                             <motion.div
                                                 className="absolute inset-0 bg-gradient-to-tr from-purple-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -278,7 +278,7 @@ const Client = () => {
                                         </div>
                                         {/* Client name tooltip */}
                                         <motion.div
-                                            className="absolute -bottom-8 left-0 right-0 text-center text-sm text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none font-medium"
+                                            className="absolute -bottom-6 left-0 right-0 text-center text-sm text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none font-medium"
                                             initial={{ y: 10, opacity: 0 }}
                                             whileHover={{ y: 0, opacity: 1 }}
                                         >
@@ -293,7 +293,7 @@ const Client = () => {
 
                 {/* Call to action for potential clients */}
                 <motion.div
-                    className="text-center mt-16"
+                    className="text-center mt-8"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
