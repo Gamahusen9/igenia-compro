@@ -25,7 +25,7 @@ export const blogPosts = [
     id: 2,
     title: "Sinergi IGENIA dan SMK Wikrama Bogor: Membangun Masa Depan Pendidikan Indonesia",
     slug: "sinergi-igenia-dan-smk-wikrama-bogor",
-    excerpt: "A look at the most important technology trends shaping the industry this year.",
+    excerpt: "Kolaborasi IGENIA dan SMK Wikrama ciptakan program magang untuk siswa lebih siap kerja.",
     content: `
           <div class="blog-content">
             <h2 class="blog-title">IGENIA Berkomitmen Dukung Pendidikan Indonesia Melalui Kerjasama dengan SMK Wikrama Bogor</h2>
@@ -48,7 +48,7 @@ export const blogPosts = [
   {
     id: 3, title: "NIK sebagai NPWP: Mengapa NIK Diperlukan sebagai NPWP?",
     slug: "designing-for-user-experience",
-    excerpt: "Our best practices for creating delightful and effective user experiences.",
+    excerpt: "Integrasi NIK sebagai NPWP tingkatkan efisiensi, akurasi, dan transparansi perpajakan.",
     content: `<div class="blog-content">
             <h2 class="blog-title">NIK sebagai NPWP telah menjadi keharusan bagi setiap warga negara</h2>
             <p class="blog-paragraph">NIK, yang merupakan identifikasi resmi setiap warga negara Indonesia, sekarang telah diintegrasikan dengan sistem administrasi pajak sebagai upaya untuk meningkatkan efisiensi dan akurasi dalam pemungutan pajak. Penggabungan NIK sebagai bagian dari NPWP memberikan berbagai manfaat bagi pemerintah, perusahaan, dan individu.</p>
