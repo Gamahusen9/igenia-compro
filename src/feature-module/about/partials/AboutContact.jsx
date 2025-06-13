@@ -92,7 +92,7 @@ const AboutContact = () => {
                 transition={{ duration: 0.5, delay: 0.6 }}
             >
                 <motion.a
-                    href="#contact"
+                    href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7A1CAC] to-[#AD49E1] rounded-full hover:from-[#8A2CDA] hover:to-[#C159FF] transition-all duration-300 shadow-md hover:shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 text-white font-medium"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}

@@ -135,7 +135,7 @@ const Blog = () => {
                             className="relative"
                             variants={itemVariants}
                         >
-                            <Link to={`/blog/${post.id}`} className="block h-full">
+                            <Link to={`/blog/${post.slug}`} className="block h-full">
                                 <motion.div
                                     className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden h-full flex flex-col border border-purple-500/20 relative"
                                     variants={cardVariants}

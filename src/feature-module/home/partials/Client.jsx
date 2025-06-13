@@ -299,7 +299,7 @@ const Client = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 }}
                 >                    <motion.a
-                    href="#contact"
+                    href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7A1CAC] to-[#AD49E1] rounded-lg hover:from-[#8A2CDA] hover:to-[#C159FF] text-white font-medium shadow-md hover:shadow-lg transition-all duration-300"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.98 }}

@@ -114,13 +114,13 @@ export default function MainContent() {
                             <button
                                 className="bg-[#7A1CAC] hover:bg-[#AD49E1] text-white px-8 py-4 rounded-md font-medium transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-purple-800/30"
                             >
-                                {t('contact')}
+                                {t('navigation.contact')}
                             </button>
 
                             <button
                                 className="border-2 border-[#7A1CAC] hover:border-[#AD49E1] text-white hover:text-[#AD49E1] px-8 py-4 rounded-md font-medium transition-all duration-300 hover:scale-105 active:scale-95 backdrop-blur-sm"
                             >
-                                {t('services')}
+                                {t('navigation.services')}
                             </button>
                         </div>
                     </div>

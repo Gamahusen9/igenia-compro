@@ -39,12 +39,11 @@ export default function HomeLayout() {
 
             {/* PURPLE BACKGROUND SECTION: Tech */}
             <div className="bg-gradient-to-br from-[#2E073F] to-[#471166] relative overflow-hidden">
-                <Tech />
+                <Contact />
             </div>
 
             {/* WHITE BACKGROUND SECTION: Contact */}
             <div className="bg-white relative overflow-hidden">
-                <Contact />
                 <Footer />
             </div>
 

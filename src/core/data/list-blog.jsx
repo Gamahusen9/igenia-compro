@@ -1,98 +1,76 @@
 export const blogPosts = [
-    {
-        id: 1,
-        title: "How We Build Scalable Apps",
-        excerpt: "Discover our approach to building robust, scalable, and maintainable applications for clients.", content: `
+  {
+    id: 1,
+    title: "IGENIA membuka layanan Cloud Service Solution !!",
+    slug: "igenia-membuka-layanan-cloud-service-solution",
+    excerpt: "IGENIA luncurkan layanan cloud bersama Alibaba Cloud Indonesia.",
+    content: `
           <div class="blog-content">
-            <h2 class="blog-title">Arsitektur yang Scalable</h2>
-            <p class="blog-paragraph">Membangun aplikasi yang scalable membutuhkan perencanaan arsitektur yang matang, pemilihan teknologi yang tepat, dan tim yang solid. Dalam artikel ini, kami membahas langkah-langkah dan best practice yang kami terapkan di Igenia untuk memastikan setiap aplikasi yang kami bangun dapat berkembang sesuai kebutuhan klien.</p>
+            <h2 class="blog-title">Tingkatkan Efisiensi Bisnis Anda dengan Cloud Service dari IGENIA.</h2>
+            <p class="blog-paragraph">PT. Inovasi Generasi Indonesia (IGENIA), membuka layanan solusi inovatifnya dengan meluncurkan cloud service solution dengan mengusung produk Alibaba Cloud Indonesia.</p>
             
-            <p class="blog-paragraph">Kami memulai dengan analisis kebutuhan, desain modular, serta penggunaan cloud dan CI/CD untuk deployment yang efisien.</p>
+            <p class="blog-paragraph">Diresmikan dengan adanya penandatanganan PKS antara PT. Inovasi Generasi Indonesia (IGENIA) dengan PT INDOINTERNET, Tbk (Distributor Utama Alibaba Cloud Indonesia).</p>
+
+            <p class="blog-paragraph">Dengan adanya cloud service solution ini diharapkan dapat memberikan solusi end to end kepada rekan dan klien PT IGENIA, dimana secara teknologi cloud service solution ini dapat membuat mudah proses kelangsungan bisnis, membuat pencadangan data, pemulihan bencana, dan lebih meningkatkan efisiensi.</p>
+
+            <p class="blog-paragraph">PT Inovasi Generasi Indonesia (IGENIA) berkomitmen memberikan layanan total untuk cloud service solution ini mulai dari pendaftaran hingga installasi infrastruktur..</p>
             
-            <h3 class="blog-subtitle">Kunci Utama Scalability</h3>
-            <ul class="blog-list">
-              <li class="blog-list-item">Arsitektur mikroservis yang terisolasi</li>
-              <li class="blog-list-item">Database yang dioptimasi untuk performa</li>
-              <li class="blog-list-item">Caching strategis pada berbagai layer</li>
-              <li class="blog-list-item">Load balancing dan auto-scaling</li>
-            </ul>
-            
-            <h3 class="blog-subtitle">Pendekatan yang Kami Gunakan</h3>
-            <p class="blog-paragraph">Kami selalu mengutamakan arsitektur yang terukur dan dapat berkembang. Pendekatan ini memungkinkan aplikasi untuk tetap responsif bahkan ketika traffic meningkat drastis atau kebutuhan bisnis berkembang.</p>
-            
-            <div class="blog-highlight">
-              <h4 class="blog-highlight-title">Tahukah Anda?</h4>
-              <p class="blog-highlight-text">Aplikasi dengan arsitektur yang baik dapat menangani traffic hingga 10x lipat dengan performa yang tetap optimal.</p>
-            </div>
           </div>`,
-        date: "2025-06-01",
-        author: "Igenia Team",
-        category: "News",
-        image: "https://images.unsplash.com/photo-1605379399843-5870eea9b74e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-        id: 2, title: "Tech Trends 2025",
-        excerpt: "A look at the most important technology trends shaping the industry this year.", content: `
+    date: "2025-01-22",
+    author: "Superadmin",
+    category: "News",
+    image: "/assets/banner/banner-igenia-3.jpg"
+  },
+  {
+    id: 2,
+    title: "Sinergi IGENIA dan SMK Wikrama Bogor: Membangun Masa Depan Pendidikan Indonesia",
+    slug: "sinergi-igenia-dan-smk-wikrama-bogor",
+    excerpt: "A look at the most important technology trends shaping the industry this year.",
+    content: `
           <div class="blog-content">
-            <h2 class="blog-title">Teknologi Masa Depan</h2>
-            <p class="blog-paragraph">Tahun 2025 membawa banyak perubahan di dunia teknologi. Mulai dari AI, cloud computing, hingga keamanan siber yang semakin penting.</p>
+            <h2 class="blog-title">IGENIA Berkomitmen Dukung Pendidikan Indonesia Melalui Kerjasama dengan SMK Wikrama Bogor</h2>
+            <p class="blog-paragraph">PT. Inovasi Generasi Indonesia (IGENIA) baru saja menandatangani kesepakatan kerjasama dengan Sekolah Menengah Kejuruan (SMK) Wikrama Bogor untuk mengadakan program magang bagi para siswa. Program ini bertujuan untuk memberikan pengalaman praktis dan pemahaman dunia kerja yang lebih mendalam bagi para siswa sebelum mereka memasuki dunia profesional.</p>
             
-            <p class="blog-paragraph">Kami merangkum tren utama yang perlu diperhatikan oleh perusahaan dan developer agar tetap relevan dan kompetitif.</p>
-            
-            <h3 class="blog-subtitle">Tren Teratas 2025</h3>
-            <ul class="blog-list">
-              <li class="blog-list-item">AI Generatif untuk produktivitas tingkat lanjut</li>
-              <li class="blog-list-item">Blockchain untuk aplikasi enterprise</li>
-              <li class="blog-list-item">Extended Reality (XR) di dunia bisnis</li>
-              <li class="blog-list-item">Edge Computing untuk performa real-time</li>
-            </ul>
-            
-            <h3 class="blog-subtitle">Dampak pada Industri</h3>
-            <p class="blog-paragraph">Tren-tren ini tidak hanya mengubah cara kita mengembangkan aplikasi tetapi juga bagaimana bisnis beroperasi. Perusahaan yang dapat mengadopsi teknologi ini dengan cepat akan mendapatkan keunggulan kompetitif yang signifikan.</p>
-            
-            <div class="blog-highlight">
-              <h4 class="blog-highlight-title">Prediksi</h4>
-              <p class="blog-highlight-text">Menurut survey terbaru, lebih dari 75% perusahaan akan mengadopsi minimal satu dari teknologi ini dalam 2 tahun ke depan.</p>
-            </div>
+            <p class="blog-paragraph">Dalam program ini, para siswa akan diberikan kesempatan untuk bekerja langsung di berbagai departemen yang relevan dengan jurusan mereka. Kerjasama ini juga diharapkan dapat membantu siswa mengasah keterampilan yang diperlukan di industri dan memperkuat link & match antara dunia pendidikan dan dunia kerja.</p>
+
+            <p class="blog-paragraph">Direktur PT. Inovasi Generasi Indonesia (IGENIA), Dhiki Pribadi, mengatakan bahwa kerjasama ini merupakan wujud dari komitmen perusahaan dalam mendukung pengembangan SDM berkualitas di Indonesia. "Kami sangat senang bisa memberikan kontribusi nyata kepada pendidikan dengan memberikan kesempatan kepada para siswa untuk belajar langsung di lapangan," ujarnya.</p>
+
+            <p class="blog-paragraph">Sementara itu, perwakilan dari Sekolah SMK Wikrama Bogor, bapak Muslih, M.Kom, sebagai wakil kepala sekolah menyambut baik kerjasama ini. Ia berharap program magang ini bisa menjadi sarana pembelajaran yang efektif bagi siswa dan membantu mereka lebih siap menghadapi tantangan di dunia kerja setelah lulus.</p>
+
+            <p class="blog-paragraph">Program ini akan berlangsung selama 6 bulan dan diharapkan dapat terus berlanjut setiap tahunnya sebagai bagian dari strategi pengembangan kompetensi siswa di SMK Wikrama Bogor..</p>
+
           </div>`,
-        date: "2025-05-20",
-        author: "Igenia Team",
-        category: "Info",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-        id: 3, title: "Designing for User Experience",
-        excerpt: "Our best practices for creating delightful and effective user experiences.", content: `<div class="blog-content">
-            <h2 class="blog-title">User Experience Design</h2>
-            <p class="blog-paragraph">User experience (UX) adalah kunci kesuksesan aplikasi modern. Kami membagikan pengalaman dan tips dalam mendesain UI/UX yang tidak hanya menarik secara visual, tetapi juga mudah digunakan dan memenuhi kebutuhan pengguna.</p>
-            
-            <p class="blog-paragraph">Fokus pada riset pengguna, prototyping, dan iterasi desain menjadi bagian penting dari proses kami.</p>
-            
-            <h3 class="blog-subtitle">Prinsip UX Kami</h3>
-            <ul class="blog-list">
-              <li class="blog-list-item">Kenali pengguna dengan riset mendalam</li>
-              <li class="blog-list-item">Desain yang intuitif dan mudah digunakan</li>
-              <li class="blog-list-item">Konsistensi visual dan interaksi</li>
-              <li class="blog-list-item">Kecepatan dan performa sebagai prioritas</li>
-              <li class="blog-list-item">Testing dengan pengguna nyata</li>
-            </ul>
-            
-            <div class="blog-highlight">
-              <h4 class="blog-highlight-title">Pro Tip:</h4>
-              <p class="blog-highlight-text">Selalu mulai dengan kebutuhan pengguna, bukan fitur yang ingin Anda buat.</p>
-            </div>
-            
-            <h3 class="blog-subtitle">Proses Desain di Igenia</h3>
-            <p class="blog-paragraph">Di Igenia, kami menerapkan proses desain yang iteratif dan berpusat pada pengguna. Setiap tahap didokumentasikan dengan baik dan melibatkan umpan balik dari stakeholder untuk memastikan hasil akhir yang optimal.</p>
-            
-            <figure class="blog-figure">
-              <img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Design Process" class="blog-image">
-              <figcaption class="blog-caption">Proses desain UX di Igenia</figcaption>
-            </figure>
+    date: "2025-01-23",
+    author: "Superadmin",
+    category: "News",
+    image: "/assets/banner/banner-igenia-2.jpg"
+  },
+  {
+    id: 3, title: "NIK sebagai NPWP: Mengapa NIK Diperlukan sebagai NPWP?",
+    slug: "designing-for-user-experience",
+    excerpt: "Our best practices for creating delightful and effective user experiences.",
+    content: `<div class="blog-content">
+            <h2 class="blog-title">NIK sebagai NPWP telah menjadi keharusan bagi setiap warga negara</h2>
+            <p class="blog-paragraph">NIK, yang merupakan identifikasi resmi setiap warga negara Indonesia, sekarang telah diintegrasikan dengan sistem administrasi pajak sebagai upaya untuk meningkatkan efisiensi dan akurasi dalam pemungutan pajak. Penggabungan NIK sebagai bagian dari NPWP memberikan berbagai manfaat bagi pemerintah, perusahaan, dan individu.</p>
+            <h3 class="blog-subtitle">Apa saja manfaat dari penggabungan NIK sebagai NPWP?</h3>
+            <h3 class="blog-subtitle">1. Meningkatkan Akurasi Data</h3>
+            <p class="blog-paragraph">Integrasi NIK dengan NPWP membantu memastikan bahwa data pajak yang terkait dengan individu benar dan terkini. Dengan menggunakan NIK, pemerintah dapat dengan mudah mengakses informasi kependudukan yang telah diverifikasi, sehingga mengurangi kemungkinan kesalahan dalam pengisian formulir NPWP.</p>
+            <h3 class="blog-subtitle">2. Pencegahan Penyalahgunaan</h3>
+            <p class="blog-paragraph">Dengan menggunakan NIK sebagai bagian dari NPWP, pemerintah dapat memperkuat upaya pencegahan penyalahgunaan dan penipuan. Identifikasi yang lebih kuat dari setiap individu dapat mengurangi risiko penggunaan NPWP palsu atau duplikat untuk tujuan yang tidak sah.</p>
+            <h3 class="blog-subtitle">3. Sederhana dan Efisien</h3>
+            <p class="blog-paragraph">Integrasi NIK dengan NPWP membuat proses pendaftaran dan pelaporan pajak menjadi lebih sederhana dan efisien. Individu tidak perlu lagi mengingat nomor NPWP terpisah karena NIK mereka sudah menjadi NPWP mereka. Ini mengurangi beban administratif dan mempercepat proses perpajakan.</p>
+            <h3 class="blog-subtitle">4. Peningkatan Transparasi</h3>
+            <p class="blog-paragraph">Dengan NIK sebagai bagian dari NPWP, transparansi dalam sistem perpajakan meningkat. Informasi yang terkait dengan kependudukan dan pajak dapat diakses dengan lebih mudah oleh pemerintah, memungkinkan untuk pengawasan yang lebih baik atas kepatuhan perpajakan dan pengelolaan data.</p>
+            <h3 class="blog-subtitle">5. Integrasi Data</h3>
+            <p class="blog-paragraph">Integrasi NIK dengan NPWP merupakan langkah menuju integrasi data yang lebih luas antara berbagai sistem administrasi pemerintah. Ini membantu dalam penyelarasan dan pertukaran informasi antar lembaga, yang pada akhirnya meningkatkan layanan publik dan efektivitas kebijakan.</p>
+            <h3 class="blog-subtitle">Kesimpulan</h3>
+            <p class="blog-paragraph">Meskipun integrasi NIK dengan NPWP membawa banyak manfaat, penting untuk diingat bahwa keamanan data dan privasi individu tetap menjadi prioritas utama. Pemerintah harus mengambil langkah-langkah yang diperlukan untuk memastikan bahwa informasi yang disimpan dan digunakan dengan NIK di NPWP dijaga dengan ketat sesuai dengan standar privasi yang ditetapkan.</p>
+            <p class="blog-paragraph">Dengan demikian, penggunaan NIK sebagai bagian dari NPWP menandai langkah maju dalam modernisasi sistem perpajakan Indonesia. Ini tidak hanya meningkatkan efisiensi administrasi, tetapi juga memperkuat integritas dan transparansi dalam proses perpajakan. Seiring dengan perkembangan teknologi dan kebijakan, langkah-langkah semacam ini akan terus memperkuat fondasi sistem perpajakan Indonesia untuk masa depan yang lebih baik.</p>
+
           </div>`,
-        date: "2025-05-10",
-        author: "Igenia Team",
-        category: "News",
-        image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
-    }
+    date: "2025-01-19",
+    author: "Superadmin",
+    category: "Info",
+    image: "/assets/banner/banner-igenia-1.jpg"
+  }
 ];

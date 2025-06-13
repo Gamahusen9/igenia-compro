@@ -15,9 +15,9 @@ const BlogCard = ({ post, hoveredCard, setHoveredCard, formatDate, cardVariants,
                 className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden h-full flex flex-col border border-purple-500/20 relative cursor-pointer"
                 variants={cardVariants}
                 whileHover="hover"
-                onHoverStart={() => setHoveredCard(post.id)}
+                onHoverStart={() => setHoveredCard(post.slug)}
                 onHoverEnd={() => setHoveredCard(null)}
-                onClick={() => navigate(`/blog/${post.id}`)}
+                onClick={() => navigate(`/blog/${post.slug}`)}
             >
                 {/* Image Section */}
                 <div className="relative w-full h-48 overflow-hidden group">

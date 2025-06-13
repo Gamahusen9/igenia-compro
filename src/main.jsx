@@ -10,12 +10,21 @@ import AOS from "aos";
 import { RouterConfig } from "./routes/RouterConfig";
 
 
-// ScrollToTop component to reset scroll position on route changes
+// ScrollToTop component to reset scroll position and update page title on route changes
 function ScrollToTop() {
   const { pathname } = useLocation();
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
+
+    // Find the current route and set the title based on the route name
+    const currentRoute = RouterConfig.find(route => route.path === pathname);
+    if (currentRoute) {
+      const pageTitle = currentRoute.title || currentRoute.name;
+      document.title = `IGENIA - ${pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1)}`;
+    } else {
+      document.title = "IGENIA";
+    }
   }, [pathname]);
 
   return null;

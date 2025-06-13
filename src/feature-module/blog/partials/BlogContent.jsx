@@ -1,17 +1,9 @@
 import React from "react";
 
-const BlogContent = ({ post, formatDate }) => {
+const BlogContent = ({ post }) => {
     return (
         <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-purple-500/20 p-8 md:p-12">
             <img src={post.image} alt={post.title} className="w-full h-96 object-cover rounded-lg mb-8" />
-            <span className="inline-block mb-3 text-xs font-medium text-white bg-[#AD49E1]/80 px-3 py-1 rounded-full">
-                {post.category}
-            </span>
-            <h1 className="text-4xl font-bold text-[#AD49E1] mb-3">{post.title}</h1>
-            <div className="flex items-center justify-between text-sm text-gray-400 mb-8">
-                <span>{post.author}</span>
-                <span>{formatDate(post.date)}</span>
-            </div>
             <div
                 className="prose prose-invert max-w-none text-lg leading-relaxed"
                 dangerouslySetInnerHTML={{
@@ -31,5 +23,6 @@ const BlogContent = ({ post, formatDate }) => {
         </div>
     );
 };
+
 
 export default BlogContent;

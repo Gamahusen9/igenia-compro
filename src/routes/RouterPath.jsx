@@ -3,7 +3,7 @@ export const RouterPath = {
     faq: "/faq",
     about: "/about",
     blog: "/blog",
-    blogDetail: "/blog/:blogId",
+    blogDetail: "/blog/:blogSlug",
     productDetail: "/products/:productId", 
     contactUs: "/contact-us",
 };

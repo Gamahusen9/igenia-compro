@@ -58,10 +58,8 @@ const Tech = () => {
             transition: { type: "spring", stiffness: 100, damping: 10 }
         }
     }; return (
-        <section id="technologies" className="py-24 text-white relative overflow-hidden bg-gradient-to-br from-[#2E073F] to-[#471166]">
+        <section id="technologies" className="py-24 text-white relative overflow-hidden">
             {/* Enhanced purple-themed decorative elements */}
-            <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-r from-[#AD49E1]/30 to-[#7A1CAC]/20 rounded-full blur-3xl -z-0"></div>
-            <div className="absolute bottom-10 left-10 w-64 h-64 bg-gradient-to-r from-[#7A1CAC]/20 to-[#AD49E1]/30 rounded-full blur-3xl -z-0"></div>
 
             <div className="container mx-auto px-4 relative z-10">
                 {/* Section Header */}
@@ -73,42 +71,16 @@ const Tech = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <div className="inline-block relative">
-                        {/* Code icon with animated rings */}
-                        <motion.div
-                            className="absolute -top-8 -right-8 w-16 h-16 opacity-30"
-                            animate={{
-                                rotate: 360,
-                                scale: [1, 1.2, 1]
-                            }}
-                            transition={{
-                                rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                                scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-                            }}
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-full h-full text-purple-300">
-                                <path fill="currentColor" d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
-                            </svg>
-                        </motion.div>
-
-                        {/* CPU/Chip icon */}
-                        <motion.div
-                            className="absolute -bottom-8 -left-8 w-14 h-14 opacity-30"
-                            animate={{
-                                rotate: -360,
-                                scale: [1, 1.1, 1]
-                            }}
-                            transition={{
-                                rotate: { duration: 30, repeat: Infinity, ease: "linear" },
-                                scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-                            }}
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-full h-full text-purple-300">
-                                <path fill="currentColor" d="M6 4h12v1h-1v2h1v1h-1v2h1v1h-1v2h1v1h-1v2h1v1h-1v2h1v1H6v-1h1v-2H6v-1h1v-2H6v-1h1v-2H6v-1h1V8H6V7h1V5H6V4m3 1v14h6V5H9m10 0v1h1v12h-1v1h1c.55 0 1-.45 1-1V6c0-.55-.45-1-1-1h-1M4 6c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h1v-1H4V7h1V6H4m8 1c1.66 0 3 1.34 3 3 0 1.66-1.34 3-3 3-1.66 0-3-1.34-3-3 0-1.66 1.34-3 3-3m0 2c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1Z" />
-                            </svg>
-                        </motion.div>                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10"
+                        {/* <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10"
                             data-aos="zoom-in">
                             {t('techSection.title')}
+                        </h2> */}
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                            <span className="bg-gradient-to-r from-[#AD49E1] to-white bg-clip-text text-transparent">
+                                {t('tecgSection.title', 'Teknologi Kami')}
+                            </span>
                         </h2>
+
                     </div>
                     <div className="w-24 h-1 bg-gradient-to-r from-white/80 to-purple-200 mx-auto mb-6"></div>
                     <p className="text-xl text-purple-100 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">

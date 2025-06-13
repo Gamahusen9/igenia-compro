@@ -5,12 +5,11 @@ import { HiMail, HiPhone, HiLocationMarker } from 'react-icons/hi';
 // Consolidated contact information with labels
 export const contactInfo = {
     email: [
-        { label: 'Primary', value: 'info@igenia.com', href: 'mailto:info@igenia.com', icon: <HiMail /> },
-        { label: 'Business', value: 'business@igenia.com', href: 'mailto:business@igenia.com', icon: <HiMail /> },
+        { label: 'Business', value: 'halo@igenia.co.id', href: 'mailto:halo@@igenia.co.id', icon: <HiMail /> },
     ],
     phone: [
-        { label: 'Primary', value: '+62 21 1234 5678', href: 'tel:+622112345678', icon: <HiPhone /> },
-        { label: 'Support', value: '+62 21 8765 4321', href: 'tel:+622187654321', icon: <HiPhone /> },
+        { label: 'Primary', value: '+(62) 2135297239', href: 'tel:+622135297239', icon: <HiPhone /> },
+        { label: 'Primary', value: '+(62) 8118145699', href: 'tel:+628118145699', icon: <HiPhone /> },
     ],
     address: {
         value: 'H.Sikam Raya No.69 RT.002 RW.013 Kel. Kunciran Indah, Kec. Pinang Kota Tangerang, Provinsi Banten Indonesia 15144',
@@ -29,41 +28,41 @@ export const contactInfo = {
 
 // Social media links with icons, URLs and display names - Keep as is
 export const socialMediaLinks = [
-    {
-        name: 'Facebook',
-        icon: <FaFacebookF />,
-        url: 'https://facebook.com/igenia',
-        color: 'bg-[#7A1CAC] hover:bg-[#AD49E1]'
-    },
+    // {
+    //     name: 'Facebook',
+    //     icon: <FaFacebookF />,
+    //     url: 'https://facebook.com/igenia',
+    //     color: 'bg-[#7A1CAC] hover:bg-[#AD49E1]'
+    // },
     {
         name: 'Twitter',
         icon: <FaTwitter />,
-        url: 'https://twitter.com/igenia',
+        url: 'https://twitter.com/igenia_official',
         color: 'bg-[#7A1CAC] hover:bg-[#AD49E1]'
     },
-    {
-        name: 'LinkedIn',
-        icon: <FaLinkedinIn />,
-        url: 'https://linkedin.com/company/igenia',
-        color: 'bg-[#7A1CAC] hover:bg-[#AD49E1]'
-    },
+    // {
+    //     name: 'LinkedIn',
+    //     icon: <FaLinkedinIn />,
+    //     url: 'https://linkedin.com/company/igenia',
+    //     color: 'bg-[#7A1CAC] hover:bg-[#AD49E1]'
+    // },
     {
         name: 'Instagram',
         icon: <FaInstagram />,
-        url: 'https://instagram.com/igenia',
+        url: 'https://www.instagram.com/igenia.official',
         color: 'bg-[#7A1CAC] hover:bg-[#AD49E1]'
     },
-    {
-        name: 'YouTube',
-        icon: <FaYoutube />,
-        url: 'https://youtube.com/c/igenia',
-        color: 'bg-[#7A1CAC] hover:bg-[#AD49E1]'
-    },
-    {
-        name: 'TikTok',
-        icon: <FaTiktok />,
-        url: 'https://tiktok.com/@igenia',
-        color: 'bg-[#7A1CAC] hover:bg-[#AD49E1]'
-    }
+    // {
+    //     name: 'YouTube',
+    //     icon: <FaYoutube />,
+    //     url: 'https://youtube.com/c/igenia',
+    //     color: 'bg-[#7A1CAC] hover:bg-[#AD49E1]'
+    // },
+    // {
+    //     name: 'TikTok',
+    //     icon: <FaTiktok />,
+    //     url: 'https://tiktok.com/@igenia',
+    //     color: 'bg-[#7A1CAC] hover:bg-[#AD49E1]'
+    // }
 ];
 

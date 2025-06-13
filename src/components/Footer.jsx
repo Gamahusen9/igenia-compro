@@ -40,7 +40,7 @@ export default function Footer() {
                         className="mb-6 md:mb-0 md:w-auto max-w-xs"
                     >
                         <Link to="/" className="inline-block mb-6">
-                            <img src="/assets/logo.png" alt="iGenia" className="h-32 w-auto rounded-md" />
+                            <img src="/assets/logo.png" alt="IGENIA" className="h-32 w-auto rounded-md" />
                         </Link>
                         <div className="mt-6">
                             <h3 className="text-lg font-semibold mb-4 text-[#AD49E1]">
@@ -80,7 +80,7 @@ export default function Footer() {
                             <li>
                                 <div className="flex items-center mb-2">
                                     {React.cloneElement(contactInfo.address.icon, { className: "text-[#AD49E1] mr-3 text-2xl" })}
-                                    <span className="font-semibold">Address</span>
+                                    <span className="font-semibold">{t('contact.info.address')}</span>
                                 </div>
                                 <div className="ml-8">
                                     <span>{contactInfo.address.value}</span>
@@ -195,7 +195,7 @@ export default function Footer() {
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
                         >
-                            &copy; {currentYear} iGenia. {t('footer.all_rights_reserved')}
+                            &copy; {currentYear} IGENIA. {t('footer.all_rights_reserved')}
                         </motion.p>
                     </div>
                 </div>
